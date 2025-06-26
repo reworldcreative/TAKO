@@ -1,0 +1,78 @@
+.button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 15px 28px;
+  background: $primary-blue;
+  color: $primary-white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  border-radius: 999px;
+
+  @media (max-width: 765px) {
+    padding: 11px 24px;
+  }
+
+  &-icon {
+    width: 20px;
+    height: 20px;
+
+    &_left {
+      margin-right: 10px;
+    }
+
+    &_right {
+      margin-left: 10px;
+    }
+  }
+
+  &_bordered {
+    background: $primary-white;
+    color: $primary-blue;
+    border: 1px solid $primary-blue;
+
+    @media (hover: hover) {
+      &:hover {
+        background: $primary-blue;
+        color: $primary-white;
+      }
+    }
+  }
+
+  &_background {
+    background: $primary-text;
+    color: $primary-white;
+
+    @media (hover: hover) {
+      &:hover {
+        background: $primary-blue;
+      }
+    }
+  }
+
+  &-badge {
+    display: flex;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    color: $primary-white;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: 0.168px;
+    background: $badge;
+    border-radius: 7px;
+    padding: 3px;
+
+    &__plus {
+      font-size: 8px;
+      line-height: 120%;
+      letter-spacing: 0.112px;
+    }
+  }
+}

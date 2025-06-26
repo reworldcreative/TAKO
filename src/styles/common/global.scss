@@ -1,0 +1,25 @@
+@import "../fonts/fonts";
+@import "./reset";
+@import "./variables";
+@import "../ui/buttons";
+
+body {
+  font-family: "e-Ukraine", sans-serif;
+  background: $gray
+}
+
+.layout {
+  padding: 0 8px;
+}
+
+.container {
+  max-width: 1542px;
+  margin: 0 auto;
+  padding: 0 24px;
+  border-radius: 8px;
+  background: $primary-white;
+
+  @media (max-width: 765px) {
+    padding: 0 16px;
+  }
+}

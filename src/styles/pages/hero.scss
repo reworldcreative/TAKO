@@ -1,0 +1,109 @@
+.hero {
+  position: relative;
+
+  &__img {
+    width: 100%;
+    height: auto;
+    max-height: 920px;
+    object-fit: cover;
+    border-radius: 10px;
+
+    @media (max-width: 1440px) {
+      max-height: 720px;
+    }
+
+    @media (max-width: 1024px) {
+      max-height: 532px;
+    }
+
+    @media (max-width: 1024px) {
+      max-height: 532px;
+    }
+
+    @media (max-width: 768px) {
+      max-height: 562px;
+    }
+  }
+
+  &__container {
+    position: absolute;
+    left: 181px;
+    bottom: 48px;
+    max-width: 789px;
+
+    @media (max-width: 1440px) {
+      left: 24px;
+      bottom: 24px;
+    }
+
+    @media (max-width: 1024px) {
+      max-width: 100%;
+      padding: 0 32px 0 0;
+    }
+
+    @media (max-width: 768px) {
+      padding: 0 24px 0 0;
+    }
+  }
+
+  &__title {
+    width: 100%;
+    font-family: "e-Ukraine Head", sans-serif;
+    font-size: 72px;
+    line-height: 1.2;
+    letter-spacing: 0.864px;
+    color: $primary-white;
+    margin: 0 0 48px 0;
+
+    @media (max-width: 1440px) {
+      font-size: 56px;
+      font-weight: 300;
+      line-height: 1.2;
+      letter-spacing: 0.7px;
+    }
+
+    @media (max-width: 765px) {
+      font-family: 'e-Ukraine', sans-serif;
+      font-size: 36px;
+      font-weight: 300;
+      line-height: 1.2;
+      letter-spacing: 0.486px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $primary-white;
+    max-width: 554px;
+    padding: 22px 24px 22px 32px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+    @media (max-width: 1440px) {
+      padding: 16px 20px 16px 28px;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: $primary-blue;
+        background-color: $primary-white;
+        outline: 2px solid $primary-blue;
+      }
+    }
+
+    &-icon {
+      display: flex;
+      width: 28px;
+      max-width: 28px;
+      min-width: 28px;
+      height: 28px;
+      max-height: 28px;
+      min-height: 28px;
+    }
+  }
+}

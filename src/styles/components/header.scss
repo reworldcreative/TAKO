@@ -1,0 +1,404 @@
+.header {
+  border-bottom: 1px solid $gray;
+
+  &.open-burger {
+    .header {
+      &__menu-icon {
+        height: 0;
+
+        &::before {
+          transform: rotate(45deg);
+          top: 0;
+        }
+
+        &::after {
+          transform: rotate(-45deg);
+          top: 0;
+        }
+      }
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+
+    @media (max-width: 1420px) {
+      padding: 4px 0;
+    }
+
+    @media (max-width: 765px) {
+      padding: 8px 0;
+    }
+
+    @media (max-width: 375px) {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+  }
+
+  &__block {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  &__logo {
+    width: 160px;
+    height: 36px;
+
+    @media (max-width: 1420px) {
+      display: none;
+    }
+
+    &_mobile {
+      display: none;
+      width: 45px;
+      height: 40px;
+
+      @media (max-width: 1420px) {
+        display: block;
+      }
+    }
+  }
+
+  &__mobile-block {
+    display: flex;
+    align-items: center;
+  }
+
+  &__navigation {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    @media (max-width: 1420px) {
+      display: none;
+    }
+  }
+
+  .navigation {
+    &__list {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: $primary-text;
+    }
+
+    &__link {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 120%;
+      letter-spacing: 0.224px;
+
+      @media (hover: hover) {
+        &:hover {
+          color: $primary-blue;
+        }
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    @media (max-width: 375px) {
+      flex: auto;
+      justify-content: end;
+    }
+  }
+
+  &__button-badge {
+    position: relative;
+    padding: 14px 20px;
+
+    @media (max-width: 1420px) {
+      padding: 10px 12px;
+    }
+
+    @media (max-width: 765px) {
+      padding: 10px 12px;
+    }
+
+    .button-text {
+      @media (max-width: 1420px) {
+        display: none;
+      }
+    }
+
+    .button-badge {
+      @media (max-width: 1420px) {
+        position: absolute;
+        top: -3px;
+        right: -4px;
+      }
+    }
+
+    .button-icon {
+
+      &_left,
+      &_right {
+        @media (max-width: 1420px) {
+          margin-right: 0;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  &__menu-button {
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 40px;
+    padding: 4px 10px;
+    margin: 0 16px 0 0;
+    background: none;
+    border: none;
+
+    @media (hover: hover) {
+      &:hover {
+        .header {
+          &__menu-icon {
+
+            &,
+            &::before,
+            &::after {
+              background: $primary-blue;
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 1420px) {
+      display: flex;
+    }
+  }
+
+  &__menu-icon {
+    position: relative;
+    width: 28px;
+    height: 2px;
+    background: $primary-text;
+    border-radius: 1px;
+    transition: transform 0.2s ease-in-out;
+
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      top: -8px;
+      width: 28px;
+      height: 2px;
+      background: $primary-text;
+      border-radius: 1px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      bottom: -8px;
+      width: 28px;
+      height: 2px;
+      background: $primary-text;
+      border-radius: 1px;
+    }
+  }
+
+  &__button-contacts {
+    @media (max-width: 1420px) {
+      display: none;
+    }
+  }
+}
+
+.burger-menu {
+  position: absolute;
+  overflow-y: scroll;
+  z-index: 100;
+  opacity: 0;
+  scale: 0;
+  width: 100%;
+  height: calc(100dvh - 70px);
+  padding: 8px;
+  background: $primary-white;
+  transition:
+    opacity 0.2s ease-in-out,
+    scale 0s ease-in-out 0.2s;
+
+  &.show {
+    scale: 1;
+    opacity: 1;
+    transition:
+      scale 0s ease-in-out,
+      opacity 0.2s ease-in-out 0.2s;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 8px;
+  }
+
+  &__block {
+    padding: 24px;
+    width: 100%;
+    border-radius: 8px;
+    background: $gray;
+  }
+
+  &__small-text {
+    font-size: 12px;
+    line-height: 1.2;
+    letter-spacing: 0.168px;
+    color: $light-gray;
+  }
+
+  &__caption {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.4;
+    letter-spacing: 0.256px;
+  }
+
+  &__products {
+    margin: 24px 0 0;
+    display: grid;
+    gap: 12px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $primary-text;
+    padding: 0 0 12px 0;
+    border-bottom: 2px solid $border;
+
+    &:last-child {
+      padding: 0;
+      border-bottom: none;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    @media (hover: hover) {
+      &:hover {
+        color: $primary-blue;
+      }
+    }
+  }
+
+  &__products-icon {
+    width: 32px;
+    max-width: 32px;
+    min-width: 32px;
+    height: 32px;
+    max-height: 32px;
+    min-height: 32px;
+  }
+
+  &__navigation-list {
+    display: grid;
+    grid-template-columns: 100%;
+  }
+
+  &__navigation-link {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: 0.224px;
+    color: $links-gray;
+    padding: 6px 0 12px 0;
+    border-bottom: 2px solid $border;
+
+    &:first-child {
+      padding: 0 0 12px 0;
+    }
+
+    &:last-child {
+      padding: 6px 0 0;
+      border-bottom: none;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: $primary-blue;
+      }
+    }
+  }
+
+  &__socials {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 100%;
+    gap: 24px;
+  }
+
+  &__socials-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__socials-item {
+    display: flex;
+    align-items: center;
+    margin: 0 16px 0 0;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__socials-link {
+    padding: 14px;
+    border-radius: 999px;
+    border: 2px solid $primary-blue;
+
+    @media (hover: hover) {
+      &:hover {
+        background: $badge;
+      }
+    }
+  }
+
+  &__socials-icon {
+    display: flex;
+    width: 20px;
+    max-width: 20px;
+    min-width: 20px;
+    height: 20px;
+    max-height: 20px;
+    min-height: 20px;
+  }
+
+  &__button-contact {
+    justify-content: center;
+    width: 100%;
+    max-width: 656px;
+    margin: 0 auto;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+    @media (hover: hover) {
+      &:hover {
+        color: $primary-blue;
+        background-color: $primary-white;
+        outline: 2px solid $primary-blue;
+      }
+    }
+  }
+}

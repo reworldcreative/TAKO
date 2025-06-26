@@ -1,0 +1,31 @@
+<picture>
+    {{#if webpSrc}}
+    <source type="image/webp" srcset="{{webpSrc}}" media="(min-width: 1025px)">
+    {{/if}}
+
+    {{#if mediumWebpSrc}}
+    <source type="image/webp" srcset="{{mediumWebpSrc}}"
+        media="(min-width: 768px) and (max-width: 1024px)">
+    {{/if}}
+
+    {{#if smallWebpSrc}}
+    <source type="image/webp" srcset="{{smallWebpSrc}}" media="(max-width: 767px)">
+    {{/if}}
+
+    
+    {{#if src}}
+        <source srcset="{{src}}" media="(min-width: 1025px)">
+    {{/if}}
+    {{#if mediumSrc}}
+        <source srcset="{{mediumSrc}}" media="(min-width: 768px) and (max-width: 1024px)">
+    {{/if}}
+    {{#if smallSrc}}
+        <source srcset="{{smallSrc}}" media="(max-width: 767px)">
+    {{/if}}
+
+    <img src="{{src}}" alt="{{alt}}"
+    {{#if className}} class="{{className}}"{{/if}}
+    {{#if width}} width="{{width}}"{{/if}}
+    {{#if height}} height="{{height}}"{{/if}}
+    loading="lazy">
+</picture>
