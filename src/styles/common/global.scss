@@ -12,14 +12,40 @@ body {
   padding: 0 8px;
 }
 
-.container {
-  max-width: 1542px;
-  margin: 0 auto;
+.section {
+  margin: 8px 0 0;
   padding: 0 24px;
-  border-radius: 8px;
+  border-radius: 16px;
   background: $primary-white;
 
   @media (max-width: 765px) {
     padding: 0 16px;
+  }
+}
+
+.container {
+  max-width: 1542px;
+  margin: 0 auto;
+  border-radius: 8px;
+  background: $primary-white;
+}
+
+.title {
+  font-family: "e-Ukraine Head", sans-serif;
+  font-size: 56px;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: 0.7px;
+  color: $primary-text;
+
+  @media (max-width: 1420px) {
+    font-family: "e-Ukraine", sans-serif;
+    font-size: 36px;
+    letter-spacing: 0.486px;
+  }
+
+
+  @media (max-width: 300px) {
+    font-size: clamp(14px, 8vw, 24px);
   }
 }
