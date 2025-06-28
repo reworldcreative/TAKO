@@ -49,3 +49,11 @@ body {
     font-size: clamp(14px, 8vw, 24px);
   }
 }
+
+.section-container {
+  padding: 132px 0;
+
+  @media (max-width: 1420px) {
+    padding: 64px 0;
+  }
+}

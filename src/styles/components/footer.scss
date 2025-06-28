@@ -1,0 +1,257 @@
+.footer {
+  margin: 8px 0;
+  padding: 0 8px;
+  color: $primary-white;
+
+  &__container {
+    padding: 72px 24px 0;
+    border-radius: 8px;
+    background: $primary-text;
+
+    @media (max-width: 767px) {
+      padding: 48px 24px 0;
+    }
+
+
+    .container {
+      background: none;
+    }
+  }
+
+  &__wrapper {
+    padding: 0 0 56px;
+    border-bottom: 1px solid $links-gray;
+
+    @media (max-width: 1024px) {
+      padding: 0 0 32px;
+    }
+
+    @media (max-width: 540px) {
+      padding: 0 0 56px;
+    }
+  }
+
+  &__content {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 458px 438px 240px;
+    gap: 5px;
+
+    @media (max-width: 1439px) {
+      grid-template-columns: minmax(350px, 458px) minmax(350px, 438px) 240px;
+    }
+
+    @media (max-width: 1024px) {
+      grid-template-columns: minmax(200px, 286px) 240px;
+    }
+
+    @media (max-width: 767px) {
+      grid-template-columns: 100%;
+    }
+  }
+
+  &__first {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-template-columns: 100%;
+    gap: 20px;
+
+    @media (max-width: 1024px) {
+      gap: 32px;
+    }
+
+    @media (max-width: 767px) {
+      gap: 24px;
+    }
+  }
+
+  &__logo {
+    max-width: 201px;
+    height: 40px;
+
+    @media (max-width: 300px) {
+      width: 100%;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 1.2;
+    letter-spacing: 0.256px;
+
+    @media (max-width: 1024px) {
+      order: 2;
+      font-size: 12px;
+      letter-spacing: 0.168px;
+    }
+  }
+
+  &__second {
+    display: grid;
+    grid-auto-rows: max-content;
+    grid-template-columns: repeat(2, 203px);
+    gap: 32px;
+    margin: 24px 0 0;
+
+    @media (max-width: 1439px) {
+      grid-template-columns: repeat(2, minmax(130px, 203px));
+    }
+
+    @media (max-width: 1024px) {
+      order: 3;
+      grid-template-columns: repeat(2, 203px);
+      grid-column: span 2;
+      margin: 75px 0 0;
+    }
+
+    @media (max-width: 767px) {
+      grid-column: 1;
+      margin: 56px 0 0;
+    }
+
+    @media (max-width: 540px) {
+      grid-template-columns: 100%;
+      gap: 56px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-auto-rows: max-content;
+    gap: 24px;
+
+    @media (max-width: 540px) {
+      gap: 20px;
+    }
+  }
+
+  &__link {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: 0.224px;
+
+    @media (hover: hover) {
+      &:hover {
+        color: $primary-yellow;
+      }
+    }
+  }
+
+  &__bottom {
+    padding: 32px 0;
+    color: $light-gray;
+    background: $primary-text;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 17px;
+
+    @media (max-width: 1440px) {
+      text-align: left;
+    }
+  }
+
+  &__third {
+    display: grid;
+    grid-auto-rows: max-content;
+    gap: 24px;
+
+    @media (max-width: 1024px) {
+      order: 2;
+    }
+
+    @media (max-width: 767px) {
+      justify-content: flex-start;
+      margin: 32px 0 0;
+    }
+  }
+
+
+  &__socials-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 374px) {
+      gap: 8px;
+    }
+  }
+
+  &__socials-item {
+    display: flex;
+    align-items: center;
+    margin: 0 16px 0 0;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    @media (max-width: 374px) {
+      margin: 0;
+    }
+  }
+
+  &__socials-link {
+    padding: 14px;
+    border-radius: 999px;
+    background: $primary-blue;
+    color: $primary-white;
+
+    @media (hover: hover) {
+      &:hover {
+        background: $badge;
+      }
+    }
+  }
+
+  &__socials-icon {
+    display: flex;
+    width: 20px;
+    max-width: 20px;
+    min-width: 20px;
+    height: 20px;
+    max-height: 20px;
+    min-height: 20px;
+  }
+
+  &__button-contact {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 12px 16px 12px 20px;
+    border-radius: 10000px;
+    border: 1px solid $gray;
+    color: $gray;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: 0.224px;
+    background: none;
+    transition: background 0.2s ease-in-out, color 0.2s ease-in-out, border 0.2s ease-in-out;
+
+    @media (hover: hover) {
+      &:hover {
+        border: 1px solid $primary-blue;
+        background: $primary-white;
+        color: $primary-blue;
+      }
+    }
+
+    @media (max-width: 373px) {
+      flex-wrap: wrap;
+    }
+
+    .icon {
+      width: 24px;
+      max-width: 24px;
+      min-width: 24px;
+      height: 24px;
+      max-height: 24px;
+      min-height: 24px;
+    }
+  }
+}

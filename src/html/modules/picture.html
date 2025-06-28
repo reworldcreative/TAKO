@@ -1,6 +1,11 @@
 <picture>
     {{#if webpSrc}}
-    <source type="image/webp" srcset="{{webpSrc}}" media="(min-width: 1024px)">
+    {{#if mediumWebpSrc}}
+        <source type="image/webp" srcset="{{webpSrc}}" media="(min-width: 1024px)">
+    {{else}}
+        <source type="image/webp" srcset="{{webpSrc}}">
+    {{/if}}
+
     {{/if}}
 
     {{#if mediumWebpSrc}}
@@ -10,7 +15,6 @@
     {{#if smallWebpSrc}}
     <source type="image/webp" srcset="{{smallWebpSrc}}" media="(max-width: 575px)">
     {{/if}}
-
 
     {{#if src}}
     <source srcset="{{src}}" media="(min-width: 1024px)">

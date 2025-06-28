@@ -381,6 +381,7 @@
     padding: 14px;
     border-radius: 999px;
     border: 2px solid $primary-blue;
+    color: $primary-blue;
 
     @media (hover: hover) {
       &:hover {
