@@ -5,7 +5,12 @@
 
 body {
   font-family: "e-Ukraine", sans-serif;
-  background: $gray
+  background: $gray;
+
+  &::selection {
+    color: $primary-yellow;
+    background-color: $badge;
+  }
 }
 
 .layout {

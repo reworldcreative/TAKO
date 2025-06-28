@@ -200,6 +200,13 @@
     justify-content: space-between;
     transition: width 0.2s ease-in-out;
 
+    @media (hover: hover) {
+      &:hover {
+        background: $badge;
+        color: $primary-white;
+      }
+    }
+
     &.swiper-button-disabled {
       cursor: auto;
       color: $links-gray;

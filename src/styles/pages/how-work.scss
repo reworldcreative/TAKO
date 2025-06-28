@@ -102,6 +102,14 @@
     border: 1px solid $primary-blue;
     background: $gray;
     color: $badge;
+    transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+
+    @media (hover: hover) {
+      &:hover {
+        background: $badge;
+        color: $primary-white;
+      }
+    }
 
     @media (max-width: 1439px) {
       padding: 10px;
@@ -141,6 +149,7 @@
 
     &.swiper-button-disabled {
       cursor: auto;
+      pointer-events: none;
       border: 1px solid $links-gray;
       background: $gray;
       color: $links-gray;
