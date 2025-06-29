@@ -24,7 +24,7 @@ pages.forEach(page => {
 })
 
 export default defineConfig({
-  base: '/',
+  base: '/TAKO/',
   outDir: resolve(__dirname, 'docs'),
   preview: {
     port: 8000,
