@@ -1,5 +1,6 @@
 import { createDropdown, input, search } from "@/js/components/input";
 import { disablePageScroll } from '@fluejs/noscroll';
+const base = import.meta.env.BASE_URL || '/';
 
 async function getData(url) {
   try {
@@ -92,7 +93,7 @@ function checkboxDelivery() {
 
 
 export async function form() {
-  const cities = await getData('/data/cities.json');
+  const cities = await getData(`${base}data/cities.json`);
   input();
   search(cities);
   createDropdown('.dropdown', ['Опція 1', 'Опція 2', 'Опція 3']);
