@@ -1,0 +1,55 @@
+.checkout-success {
+  position: fixed;
+  display: none;
+  z-index: 10;
+  width: 100vw;
+  height: 100dvh;
+  padding: 72px 16px;
+  background: $gray;
+
+  &.show {
+    display: block;
+  }
+
+  &__container {
+    background: $gray;
+  }
+
+  &__title {
+    color: $primary-text;
+    text-align: center;
+    font-family: "e-Ukraine Head";
+    font-size: 56px;
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: 0.7px;
+  }
+
+  &__text {
+    max-width: 762px;
+    margin: 24px auto 0;
+    color: $links-gray;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: 0.352px;
+  }
+
+  &__buttons {
+    margin: 72px auto 0;
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 24px;
+  }
+
+  &__button {
+    justify-content: center;
+    width: 480px;
+    margin: 0 auto;
+    padding: 25px 32px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}

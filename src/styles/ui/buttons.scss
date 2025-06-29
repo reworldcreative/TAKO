@@ -12,9 +12,18 @@
   font-weight: 700;
   line-height: 120%;
   border-radius: 999px;
+  transition: background 0.2s ease-in-out, color 0.2s ease-in-out, outline 0.2s ease-in-out;
 
   @media (max-width: 765px) {
     padding: 11px 24px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background: $primary-white;
+      color: $primary-blue;
+      outline: 1px solid $primary-blue;
+    }
   }
 
   &-icon {
@@ -50,6 +59,8 @@
     @media (hover: hover) {
       &:hover {
         background: $primary-blue;
+        color: $primary-white;
+
       }
     }
   }

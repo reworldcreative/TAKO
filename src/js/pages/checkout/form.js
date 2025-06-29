@@ -1,4 +1,5 @@
 import { createDropdown, input, search } from "@/js/components/input";
+import { disablePageScroll } from '@fluejs/noscroll';
 
 async function getData(url) {
   try {
@@ -27,12 +28,37 @@ function checkActivateBranchNumber(cities) {
   });
 }
 
-document.querySelector('.checkout-form').addEventListener('submit', function (e) {
+document.querySelector('.checkout-form').addEventListener('submit', async function (e) {
   e.preventDefault();
 
   const form = e.target;
   const formData = new FormData(form);
   const data = Object.fromEntries(formData.entries());
+  window.scrollTo({
+    top: 0,
+    behavior: 'auto'
+  });
+  const successForm = document.querySelector('.checkout-success');
+  successForm.classList.add('show');
+  disablePageScroll();
+
+  // try {
+  //   const response = await fetch('/your-endpoint-url', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify(data),
+  //   });
+
+  //   if (!response.ok) {
+  //     throw new Error(`Server error: ${response.status}`);
+  //   }
+  //   form.reset();
+  // } catch (error) {
+  //   console.error(error);
+  // }
+
 
   console.log(data);
 });

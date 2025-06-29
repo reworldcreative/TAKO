@@ -29,6 +29,10 @@
     gap: 32px;
     margin: 56px 0 0;
 
+    @media (max-width: 1440px) {
+      grid-template-columns: 100%;
+    }
+
     &_full {
       grid-template-columns: 100%;
     }

@@ -1,3 +1,5 @@
+import IMask from 'imask';
+
 export function input() {
   const numericInputs = document.querySelectorAll('.input_numeric');
   const phoneInputs = document.querySelectorAll('.input_phone');
