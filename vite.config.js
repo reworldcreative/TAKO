@@ -14,7 +14,7 @@ import pages from './pages.config.js'
 import path from 'path'
 
 const root = resolve(__dirname, 'src/')
-const outDir = resolve(__dirname, 'dist')
+const outDir = resolve(__dirname, 'docs')
 dotenv.config({ path: resolve(__dirname, '.env') })
 
 const pagesInput = {}
