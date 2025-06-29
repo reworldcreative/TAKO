@@ -23,8 +23,11 @@ pages.forEach(page => {
   pagesInput[page.name] = page.path
 })
 
+
+const repoName = 'TAKO'
+
 export default defineConfig({
-  base: '/TAKO/',
+  base: process.env.NODE_ENV === 'production' ? `/${repoName}/` : '/',
   outDir: resolve(__dirname, 'docs'),
   preview: {
     port: 8000,
