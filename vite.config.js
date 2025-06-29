@@ -24,6 +24,8 @@ pages.forEach(page => {
 })
 
 export default defineConfig({
+  base: '/',
+  outDir: resolve(__dirname, 'docs'),
   preview: {
     port: 8000,
     strictPort: true,
