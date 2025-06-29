@@ -1,0 +1,154 @@
+.input {
+  padding: 16px;
+  border-radius: 8px;
+  border: 2px solid $light-gray;
+  background: $primary-white;
+  color: $primary-text;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.224px;
+
+  &::placeholder {
+    color: $links-gray;
+  }
+
+  &:focus {
+    border: 2px solid $primary-blue;
+  }
+
+  &:disabled,
+  &.disabled {
+    pointer-events: none;
+    color: $links-gray;
+    border: 2px solid $border;
+
+    &::placeholder {
+      color: $border;
+    }
+  }
+}
+
+.search,
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid $light-gray;
+  background: $primary-white;
+
+  &:has(input:focus) {
+    border: 2px solid $primary-blue;
+  }
+
+  &:has(input:disabled),
+  &:disabled,
+  &.disabled {
+    pointer-events: none;
+    color: $links-gray;
+    border: 2px solid $border;
+
+    .input {
+      &::placeholder {
+        color: $border;
+      }
+    }
+
+    .dropdown__button {
+      pointer-events: none;
+      color: $border;
+    }
+  }
+
+  .input {
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: none;
+    color: $primary-text;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.224px;
+
+    &::placeholder {
+      color: $links-gray;
+    }
+  }
+
+  &__button {
+    // cursor: pointer;
+    background: none;
+    border: none;
+    color: $links-gray;
+  }
+
+  &__icon {
+    pointer-events: none;
+    width: 20px;
+    max-width: 20px;
+    min-width: 20px;
+    height: 20px;
+    max-height: 20px;
+    min-height: 20px;
+    background: none;
+    border: none;
+  }
+
+  &__suggestions {
+    position: absolute;
+    display: none;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 12px;
+    border-radius: 0 0 8px 8px;
+    background: $primary-white;
+    border: 2px solid $light-gray;
+    z-index: 3;
+
+    &-list {
+      overflow-y: scroll;
+      max-height: 250px;
+      scrollbar-width: thin;
+      scrollbar-color: $badge transparent;
+
+      &::-webkit-scrollbar {
+        width: 2px;
+        height: 2px;
+        background: transparent;
+        background-clip: content-box;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+        background: $badge;
+      }
+    }
+
+    &.open {
+      display: block;
+    }
+  }
+
+  &__item {
+    cursor: pointer;
+    color: $primary-text;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.224px;
+    margin: 0 0 12px;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: $primary-yellow;
+      }
+    }
+  }
+}

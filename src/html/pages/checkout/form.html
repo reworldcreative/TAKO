@@ -1,0 +1,174 @@
+<form class='checkout-form' action="/" method="POST">
+
+  <section class="section checkout-form__header">
+    <h1 class='title'>Оформити замовлення</h1>
+  </section>
+
+  <div class='checkout-form__container'>
+    <div class='checkout-form__left'>
+      <section class="section checkout-form__contacts">
+        <h2 class='caption'>Контакти замовника</h2>
+
+        <div class='checkout-form__block'>
+          <fieldset class='checkout-form__fieldset'>
+            <label class='label' for="surname">Прізвище</label>
+            <input class='input' id="surname" name="surname" type="text" required autocomplete="family-name"
+              placeholder='Введіть прізвище' pattern="^[A-Za-zА-Яа-яЁёЇїІіЄєҐґ’\-]+$"
+              oninput="this.value = this.value.replace(/[^A-Za-zА-Яа-яЁёЇїІіЄєҐґ'-]/g, '')" maxlength="70">
+          </fieldset>
+
+          <fieldset class='checkout-form__fieldset'>
+            <label class='label' for="name">Ім’я</label>
+            <input class='input' id="name" name="name" type="text" required autocomplete="given-name"
+              placeholder='Введіть ім’я' pattern="^[A-Za-zА-Яа-яЁёЇїІіЄєҐґ’\-]+$"
+              oninput="this.value = this.value.replace(/[^A-Za-zА-Яа-яЁёЇїІіЄєҐґ'-]/g, '')" maxlength="50">
+          </fieldset>
+
+          <fieldset class='checkout-form__fieldset'>
+            <label class='label' for="middle-name">По батькові</label>
+            <input class='input' id="middle-name" name="middle-name" type="text" required autocomplete="additional-name"
+              placeholder='Введіть по батькові' pattern="^[A-Za-zА-Яа-яЁёЇїІіЄєҐґ’\-]+$"
+              oninput="this.value = this.value.replace(/[^A-Za-zА-Яа-яЁёЇїІіЄєҐґ'-]/g, '')" maxlength="50">
+          </fieldset>
+
+          <fieldset class='checkout-form__fieldset'>
+            <label class='label' for="phone">Номер телефону</label>
+            <input class='input input_phone' id="phone" name="phone" type="text" required autocomplete="tel"
+              placeholder='+380'>
+          </fieldset>
+        </div>
+      </section>
+
+      <section class="section checkout-form__delivery">
+        <h2 class='caption'>Доставка</h2>
+
+        <div class='checkout-form__block'>
+          <fieldset class='checkout-form__fieldset'>
+            <label class='label' for="address">Місто / Населений пункт</label>
+            <div class='search'>
+              <input class='input input_search' id="address" name="address" type="text" required
+                autocomplete="address-line1" placeholder='Введіть'>
+
+              <button class='search__button' type='button'>
+                <svg class="search__icon">
+                  <use xlink:href="#search"></use>
+                </svg>
+              </button>
+
+              <div class="search__suggestions">
+                <ul class='search__suggestions-list'>
+                </ul>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class='checkout-form__fieldset'>
+            <label class='label' for="branch-number">Номер відділення</label>
+            <div class='dropdown'>
+              <input class='input input_dropdown' id="branch-number" name="branch-number" type="text" disabled readonly
+                required placeholder='Оберіть номер відділення НП'>
+
+              <button class='dropdown__button' type='button'>
+                <svg class="search__icon">
+                  <use xlink:href="#arrow-down"></use>
+                </svg>
+              </button>
+
+              <div class="dropdown__suggestions">
+                <ul class='dropdown__suggestions-list'>
+                </ul>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </section>
+
+      <section class="section checkout-form__delivery">
+        <h2 class='caption'>Зручний метод зв’язку</h2>
+
+        <div class='checkout-form__block checkout-form__block_full'>
+          <fieldset class='checkout-form__radio-block'>
+            <label class='checkout-form__radio-label'>
+              <input type="radio" name="delivery" value="phone" required checked>
+              <span class="radio-mark"></span>
+              <span>Номер телефону</span>
+            </label>
+
+            <label class='checkout-form__radio-label'>
+              <input type="radio" name="delivery" value="viber">
+              <span class="radio-mark"></span>
+              <span>Viber</span>
+            </label>
+
+            <label class='checkout-form__radio-label'>
+              <input type="radio" name="delivery" value="telegram">
+              <span class="radio-mark"></span>
+              <span>Telegram</span>
+            </label>
+
+            <label class='checkout-form__radio-label'>
+              <input type="radio" name="delivery" value="whatsup">
+              <span class="radio-mark"></span>
+              <span>Whatsup</span>
+            </label>
+
+            <label class='checkout-form__radio-label'>
+              <input type="radio" name="delivery" value="signal">
+              <span class="radio-mark"></span>
+              <span>Signal</span>
+            </label>
+          </fieldset>
+
+          <div class="checkout-form__delivery-options">
+            <div class="checkout-form__delivery-content" data-method="phone">
+              <fieldset class="checkout-form__fieldset">
+                <label class='label'>Номер телефону</label>
+                <input class='input' id="delivery-phone" name="delivery-phone" type="text" autocomplete="tel"
+                  placeholder='+380'>
+              </fieldset>
+            </div>
+
+            <div class="checkout-form__delivery-content" data-method="viber">
+              <fieldset class="checkout-form__fieldset">
+                <label class='label'>Viber</label>
+                <input class='input' id="delivery-viber" name="delivery-viber" type="text">
+              </fieldset>
+            </div>
+
+            <div class="checkout-form__delivery-content" data-method="telegram">
+              <fieldset class="checkout-form__fieldset">
+                <label class='label'>Telegram</label>
+                <input class='input' id="delivery-telegram" name="delivery-telegram" type="text">
+              </fieldset>
+            </div>
+
+            <div class="checkout-form__delivery-content" data-method="whatsup">
+              <fieldset class="checkout-form__fieldset">
+                <label class='label'>Whatsup</label>
+                <input class='input' id="delivery-whatsup" name="delivery-whatsup" type="text">
+              </fieldset>
+            </div>
+
+            <div class="checkout-form__delivery-content" data-method="signal">
+              <fieldset class="checkout-form__fieldset">
+                <label class='label'>Signal</label>
+                <input class='input' id="delivery-signal" name="delivery-signal" type="text">
+              </fieldset>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="section checkout-form__preorder">
+      <h2 class='caption'>Передзамовлення</h2>
+
+      <div class='checkout-form__second-block'>
+        <button class='button checkout-form__button' type='submit'>
+          Підтвердити
+        </button>
+      </div>
+    </section>
+  </div>
+</form>

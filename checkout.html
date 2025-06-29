@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="/src/styles/checkout.scss">
+  <script src="https://unpkg.com/imask"></script>
+</head>
+
+<body>
+  {{>components/header}}
+
+  <div class='layout checkout'>
+
+    <main class='checkout__main'>
+      {{>pages/checkout/form}}
+    </main>
+
+    <footer class='checkout__footer'>
+      <div class='checkout__footer-wrapper'>
+        <p>© 2025 TAKO. All rights reserved</p>
+      </div>
+    </footer>
+  </div>
+
+  {{>components/sprite }}
+  <script type="module" src="/src/js/checkout.js"></script>
+</body>
+
+</html>

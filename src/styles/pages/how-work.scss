@@ -540,8 +540,10 @@
   }
 
   &__text {
-    display: flex;
-    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 330px;
   }
 
   &__small-text {

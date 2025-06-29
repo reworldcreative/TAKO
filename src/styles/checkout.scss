@@ -1,0 +1,29 @@
+@import "./common/global";
+@import "./components/header";
+@import "@/styles/pages/checkout/form";
+
+.checkout {
+  min-height: calc(100dvh - 80px);
+  display: flex;
+  flex-direction: column;
+
+  &__main {
+    flex: 1;
+  }
+
+  &__footer {
+    padding: 0 0 8px;
+
+    &-wrapper {
+      padding: 32px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 17px;
+      color: $light-gray;
+      border: 1px solid $primary-black;
+      background: $primary-text;
+    }
+
+  }
+}

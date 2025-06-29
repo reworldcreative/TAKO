@@ -1,3 +1,5 @@
+<div class='header__bg'></div>
+
 <header class='header'>
   <div class='container header__container'>
     <div class="header__wrapper">
@@ -19,7 +21,7 @@
         </div>
 
         <nav class="header__navigation navigation">
-          <button class='button' type='button'>
+          <button class='button header__products-button' type='button'>
             <span>Вироби</span>
 
             <svg class="button-icon button-icon_right">
@@ -39,7 +41,7 @@
       <div class='header__buttons'>
         <button class='button button_bordered header__button-contacts' type='button'>Зв’язатися</button>
         <button class='button button_bordered' type='button'>Підтримати</button>
-        <button class='button button_background header__button-badge' type='button'>
+        <a href='/checkout.html' class='button button_background header__button-badge'>
           <svg class="button-icon button-icon_left">
             <use xlink:href="#backpack"></use>
           </svg>
@@ -50,11 +52,117 @@
             <span>5</span>
             <span class='button-badge__plus'>+</span>
           </span>
-        </button>
+        </a>
       </div>
     </div>
   </div>
 </header>
+
+<div class='section header__products products noscroll-allow' data-scroll-lock-scrollable>
+  <div class="container">
+    <ul class='products__list'>
+      <li class='products__item'>
+        <a href="#" class="products__link">
+          <div class='products__image'>
+            {{>modules/picture className="img" src="/img/weapon1.png" webpSrc="/img/weapon1.webp"
+            width="360" height="172" alt="weapon"}}
+            <svg class="products__icon">
+              <use xlink:href="#corner"></use>
+            </svg>
+          </div>
+
+          <div class='products__info'>
+            <span>Для зброї</span>
+
+            <svg class="products__info-icon">
+              <use xlink:href="#products-icon2"></use>
+            </svg>
+          </div>
+        </a>
+      </li>
+
+      <li class='products__item'>
+        <a href="#" class="products__link">
+          <div class='products__image'>
+            {{>modules/picture className="img" src="/img/medicine.png" webpSrc="/img/medicine.webp"
+            width="360" height="172" alt="medicine"}}
+            <svg class="products__icon">
+              <use xlink:href="#corner-white"></use>
+            </svg>
+          </div>
+
+          <div class='products__info'>
+            <span>Медицина</span>
+
+            <svg class="products__info-icon">
+              <use xlink:href="#products-icon2"></use>
+            </svg>
+          </div>
+        </a>
+      </li>
+
+      <li class='products__item'>
+        <a href="#" class="products__link">
+          <div class='products__image'>
+            {{>modules/picture className="img" src="/img/walkie-talkie.png" webpSrc="/img/walkie-talkie.webp"
+            width="360" height="172" alt="walkie-talkie"}}
+            <svg class="products__icon">
+              <use xlink:href="#corner"></use>
+            </svg>
+          </div>
+
+          <div class='products__info'>
+            <span>Для рацій</span>
+
+            <svg class="products__info-icon">
+              <use xlink:href="#products-icon2"></use>
+            </svg>
+          </div>
+        </a>
+      </li>
+
+      <li class='products__item'>
+        <a href="#" class="products__link">
+          <div class='products__image'>
+            {{>modules/picture className="img" src="/img/reb.png" webpSrc="/img/reb.webp"
+            width="360" height="172" alt="reb"}}
+            <svg class="products__icon">
+              <use xlink:href="#corner-white"></use>
+            </svg>
+          </div>
+
+          <div class='products__info'>
+            <span>РЕБ / РЕР</span>
+
+            <svg class="products__info-icon">
+              <use xlink:href="#products-icon2"></use>
+            </svg>
+          </div>
+        </a>
+      </li>
+
+      <li class='products__item'>
+        <a href="#" class="products__link">
+          <div class='products__image'>
+            {{>modules/picture className="img" src="/img/drone.png" webpSrc="/img/drone.webp"
+            width="360" height="172" alt="drone"}}
+            <svg class="products__icon">
+              <use xlink:href="#corner"></use>
+            </svg>
+          </div>
+
+          <div class='products__info'>
+            <span>Для дронів</span>
+
+            <svg class="products__info-icon">
+              <use xlink:href="#products-icon2"></use>
+            </svg>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
 
 <div class='burger-menu noscroll-allow' data-scroll-lock-scrollable>
   <div class='burger-menu__wrapper'>
