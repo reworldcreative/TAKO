@@ -29,4 +29,25 @@ export function reviewsSlider() {
       },
     },
   });
+
+
+  const target = document.querySelector('.reviews');
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    if (entries[0].isIntersecting) {
+      const script = document.createElement('script');
+      script.src = "https://connect.facebook.net/uk_UA/sdk.js#xfbml=1&version=v19.0";
+      script.async = true;
+      script.defer = true;
+      script.crossOrigin = "anonymous";
+      script.nonce = "FbNonce";
+      document.body.appendChild(script);
+
+      observer.unobserve(target);
+    }
+  }, {
+    threshold: 0.1
+  });
+
+  observer.observe(target);
 }

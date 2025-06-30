@@ -9,21 +9,21 @@
     max-height: 920px;
     object-fit: cover;
     border-radius: 10px;
+    aspect-ratio: 1920 / 920;
 
     @media (max-width: 1440px) {
       max-height: 720px;
+      aspect-ratio: 1424 / 720;
     }
 
     @media (max-width: 1024px) {
       max-height: 532px;
-    }
-
-    @media (max-width: 1024px) {
-      max-height: 532px;
+      aspect-ratio: 1000 / 532;
     }
 
     @media (max-width: 767px) {
       max-height: 562px;
+      aspect-ratio: 359 / 562;
     }
   }
 
