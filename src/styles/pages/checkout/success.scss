@@ -13,6 +13,12 @@
 
   &__container {
     background: $gray;
+
+    @media (max-width: 767px) {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   &__title {
@@ -23,6 +29,16 @@
     font-weight: 300;
     line-height: 1.2;
     letter-spacing: 0.7px;
+
+    @media (max-width: 1024px) {
+      font-size: 36px;
+      letter-spacing: 0.486px;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 28px;
+      letter-spacing: 0.392px;
+    }
   }
 
   &__text {
@@ -34,6 +50,17 @@
     font-weight: 300;
     line-height: 1.2;
     letter-spacing: 0.352px;
+
+    @media (max-width: 1024px) {
+      max-width: 700px;
+      font-size: 16px;
+      line-height: 1.4;
+      letter-spacing: 0.256px;
+    }
+
+    @media (max-width: 767px) {
+      margin: 16px auto;
+    }
   }
 
   &__buttons {
@@ -41,6 +68,11 @@
     display: grid;
     grid-template-columns: 100%;
     gap: 24px;
+
+    @media (max-width: 767px) {
+      margin: auto 0 56px;
+      gap: 16px;
+    }
   }
 
   &__button {
@@ -51,5 +83,15 @@
     font-size: 18px;
     font-weight: 700;
     line-height: 1.2;
+
+    @media (max-width: 1024px) {
+      font-size: 16px;
+      font-weight: 500;
+      padding: 16px 28px;
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
 }
