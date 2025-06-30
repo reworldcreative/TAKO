@@ -4,6 +4,12 @@
     <h1 class='title'>Оформити замовлення</h1>
   </section>
 
+  <!-- <div class='checkout-form__products checkout-form__products_mobile'>
+    {{>pages/checkout/product-card id="1"}}
+    {{>pages/checkout/product-card id="2"}}
+    {{>pages/checkout/product-card id="3"}}
+  </div> -->
+
   <div class='checkout-form__container'>
     <div class='checkout-form__left'>
       <section class="section checkout-form__contacts">
@@ -34,7 +40,7 @@
           <fieldset class='checkout-form__fieldset'>
             <label class='label' for="phone">Номер телефону</label>
             <input class='input input_phone' id="phone" name="phone" type="text" required autocomplete="tel"
-              placeholder='+380'>
+              placeholder='+380' maxlength="13">
           </fieldset>
         </div>
       </section>
@@ -164,13 +170,18 @@
     <section class="section checkout-form__preorder">
       <h2 class='caption'>Передзамовлення</h2>
 
-      <div class='checkout-form__products'>
-
+      <div class='checkout-form__products checkout-form__products_desktop'>
+        {{>pages/checkout/product-card id="1"}}
+        {{>pages/checkout/product-card id="2"}}
+        {{>pages/checkout/product-card id="3"}}
       </div>
 
       <div class='checkout-form__price'>
         <p class='checkout-form__text'>собівартість виробів:</p>
-        <p class='checkout-form__price-value'>140,00грн</p>
+        <p class='checkout-form__price-container'>
+          <span class='checkout-form__price-value'>140,00</span>
+          <span class='checkout-form__price-accent'>грн</span>
+        </p>
 
         <div class='checkout-form__badge'>
           <p class='checkout-form__badge-text'>

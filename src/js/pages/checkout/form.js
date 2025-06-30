@@ -99,4 +99,13 @@ export async function form() {
   createDropdown('.dropdown', ['Опція 1', 'Опція 2', 'Опція 3']);
   checkActivateBranchNumber(cities);
   checkboxDelivery();
+
+  if (typeof navigator !== 'undefined') {
+    if (navigator.userAgent.toLowerCase().includes('firefox')) {
+      const productsContainer = document.querySelector('.checkout-form__products');
+
+      productsContainer.style.setProperty('scrollbar-width', 'thin');
+      productsContainer.style.setProperty('scrollbar-color', '#0F5EBB transparent');
+    };
+  }
 }
