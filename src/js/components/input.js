@@ -115,6 +115,7 @@ export function createDropdown(element, options) {
     suggestionsList.innerHTML = '';
 
     if (filteredOptions.length === 0) {
+      dropdown.classList.remove('open');
       suggestionsContainer.classList.remove('open');
       return
     }
@@ -125,6 +126,7 @@ export function createDropdown(element, options) {
       li.addEventListener('click', () => {
         input.value = opt;
         suggestionsContainer.classList.remove('open');
+        dropdown.classList.remove('open');
         input.dispatchEvent(inputEvent)
       });
       suggestionsList.appendChild(li);
@@ -137,6 +139,7 @@ export function createDropdown(element, options) {
     const query = input.value.trim().toLowerCase();
     if (query === '') {
       updateSuggestions(options);
+      dropdown.classList.add('open');
       suggestionsContainer.classList.add('open');
     } else {
       const filtered = options.filter(opt => opt.toLowerCase().includes(query));
@@ -147,16 +150,19 @@ export function createDropdown(element, options) {
   input.addEventListener('focus', () => {
     if (suggestionsList.children.length > 0) {
       suggestionsContainer.classList.add('open');
+      dropdown.classList.add('open');
     }
   });
 
   btn.addEventListener('click', () => {
     suggestionsContainer.classList.toggle('open');
+    dropdown.classList.toggle('open');
   });
 
   document.addEventListener('click', (e) => {
     if (!dropdown.contains(e.target)) {
       suggestionsContainer.classList.remove('open');
+      dropdown.classList.remove('open');
     }
   });
 }
