@@ -4,12 +4,6 @@
     <h1 class='title'>Оформити замовлення</h1>
   </section>
 
-  <!-- <div class='checkout-form__products checkout-form__products_mobile'>
-    {{>pages/checkout/product-card id="1"}}
-    {{>pages/checkout/product-card id="2"}}
-    {{>pages/checkout/product-card id="3"}}
-  </div> -->
-
   <div class='checkout-form__container'>
     <div class='checkout-form__left'>
       <section class="section checkout-form__contacts">
@@ -40,7 +34,7 @@
           <fieldset class='checkout-form__fieldset'>
             <label class='label' for="phone">Номер телефону</label>
             <input class='input input_phone' id="phone" name="phone" type="text" required autocomplete="tel"
-              placeholder='+380' maxlength="13">
+              placeholder='+380'>
           </fieldset>
         </div>
       </section>
@@ -95,31 +89,31 @@
         <div class='checkout-form__block checkout-form__block_full'>
           <fieldset class='checkout-form__radio-block'>
             <label class='checkout-form__radio-label'>
-              <input type="radio" name="delivery" value="phone" required checked>
+              <input type="radio" name="convenient-communication-method" value="phone" required checked>
               <span class="radio-mark"></span>
               <span>Номер телефону</span>
             </label>
 
             <label class='checkout-form__radio-label'>
-              <input type="radio" name="delivery" value="viber">
+              <input type="radio" name="convenient-communication-method" value="viber">
               <span class="radio-mark"></span>
               <span>Viber</span>
             </label>
 
             <label class='checkout-form__radio-label'>
-              <input type="radio" name="delivery" value="telegram">
+              <input type="radio" name="convenient-communication-method" value="telegram">
               <span class="radio-mark"></span>
               <span>Telegram</span>
             </label>
 
             <label class='checkout-form__radio-label'>
-              <input type="radio" name="delivery" value="whatsup">
+              <input type="radio" name="convenient-communication-method" value="whatsup">
               <span class="radio-mark"></span>
               <span>Whatsup</span>
             </label>
 
             <label class='checkout-form__radio-label'>
-              <input type="radio" name="delivery" value="signal">
+              <input type="radio" name="convenient-communication-method" value="signal">
               <span class="radio-mark"></span>
               <span>Signal</span>
             </label>
@@ -129,39 +123,42 @@
             <div class="checkout-form__delivery-content" data-method="phone">
               <fieldset class="checkout-form__fieldset">
                 <label class='label'>Номер телефону</label>
-                <input class='input' id="delivery-phone" name="delivery-phone" type="text" autocomplete="tel"
-                  placeholder='+380'>
+                <input class='input input_phone' id="delivery-phone" name="delivery-phone" type="text"
+                  autocomplete="tel" placeholder='+380'>
               </fieldset>
             </div>
 
             <div class="checkout-form__delivery-content" data-method="viber">
               <fieldset class="checkout-form__fieldset">
                 <label class='label'>Viber</label>
-                <input class='input' id="delivery-viber" name="delivery-viber" type="text">
+                <input class='input input_phone' id="delivery-viber" name="delivery-viber" type="text"
+                  autocomplete="tel" placeholder='+380'>
               </fieldset>
             </div>
 
             <div class="checkout-form__delivery-content" data-method="telegram">
               <fieldset class="checkout-form__fieldset">
                 <label class='label'>Telegram</label>
-                <input class='input' id="delivery-telegram" name="delivery-telegram" type="text">
+                <input class='input input_phone' id="delivery-telegram" name="delivery-telegram" type="text"
+                  autocomplete="tel" placeholder='+380'>
               </fieldset>
             </div>
 
             <div class="checkout-form__delivery-content" data-method="whatsup">
               <fieldset class="checkout-form__fieldset">
                 <label class='label'>Whatsup</label>
-                <input class='input' id="delivery-whatsup" name="delivery-whatsup" type="text">
+                <input class='input input_phone' id="delivery-whatsup" name="delivery-whatsup" type="text"
+                  autocomplete="tel" placeholder='+380'>
               </fieldset>
             </div>
 
             <div class="checkout-form__delivery-content" data-method="signal">
               <fieldset class="checkout-form__fieldset">
                 <label class='label'>Signal</label>
-                <input class='input' id="delivery-signal" name="delivery-signal" type="text">
+                <input class='input input_phone' id="delivery-signal" name="delivery-signal" type="text"
+                  autocomplete="tel" placeholder='+380'>
               </fieldset>
             </div>
-
           </div>
         </div>
       </section>
@@ -170,7 +167,7 @@
     <section class="section checkout-form__preorder">
       <h2 class='caption'>Передзамовлення</h2>
 
-      <div class='checkout-form__products checkout-form__products_desktop'>
+      <div class='checkout-form__products checkout-form__products'>
         {{>pages/checkout/product-card id="1"}}
         {{>pages/checkout/product-card id="2"}}
         {{>pages/checkout/product-card id="3"}}
@@ -191,7 +188,7 @@
         </div>
       </div>
 
-      <div class='checkout-form__second-block'>
+      <div class='checkout-form__second-block checkout-form__second-block_desktop'>
         <div class='checkout-form__bottom'>
           <div class='checkout-form__buttons'>
             <button class='button checkout-form__button' type='submit'>
@@ -210,5 +207,24 @@
         </div>
       </div>
     </section>
+
+    <div class='section checkout-form__second-block checkout-form__second-block_mobile'>
+      <div class='checkout-form__bottom'>
+        <div class='checkout-form__buttons'>
+          <button class='button checkout-form__button' type='submit'>
+            Підтвердити
+          </button>
+
+          <button class='button button_bordered checkout-form__button' type='submit'>
+            Підтвердити та підтримати
+          </button>
+        </div>
+
+        <p class='checkout-form__text checkout-form__bottom-text'>
+          Залиште заявку — ми зв’яжемось із вами для уточнення деталей і підтвердження замовлення. Жодної передоплати
+          до підтвердження. Все просто і чесно.
+        </p>
+      </div>
+    </div>
   </div>
 </form>

@@ -21,7 +21,7 @@ export function observeProductRemoval(callback) {
 export function products() {
   productCard();
 
-  const productsList = window.innerWidth < 1024 ? document.querySelector('.checkout-form__products_mobile') : document.querySelector('.checkout-form__products_desktop');
+  const productsList = document.querySelector('.checkout-form__products');
   const total = document.querySelector('.checkout-form__price-value');
 
   const updateTotal = () => {

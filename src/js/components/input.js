@@ -24,26 +24,42 @@ export function input() {
   const masks = [
     createMask('+{380} (00) 000-00-00', '380', 'UA'),
     createMask('+{1} (000) 000-0000', '1', 'US'),
-    {
-      mask: /^\d{0,15}$/,
-    }
+    // {
+    //   mask: /^\d{0,15}$/,
+    // }
   ];
 
   phoneInputs.forEach(input => {
     const maskInstance = IMask(input, {
       mask: masks,
-      dispatch: function (appended, dynamicMasked) {
+      dispatch(appended, dynamicMasked) {
         let number = (dynamicMasked.value + appended).replace(/\D/g, '');
-        if (number.startsWith('0')) {
-          number = '380' + number.slice(1);
+
+        if (!number.startsWith('380') && !number.startsWith('1')) {
+          number = '380' + number;
         }
 
         const matchedMask = dynamicMasked.compiledMasks.find(m =>
           number.startsWith(m.startsWith)
         );
-        return matchedMask || dynamicMasked.compiledMasks.find(m => m.mask instanceof RegExp);
-      }
+
+        return matchedMask || dynamicMasked.compiledMasks.find(m => m.startsWith === '380');
+      },
+      lazy: false,
+      placeholderChar: ' ',
     });
+
+    // input.addEventListener('input', () => {
+    //   let val = maskInstance.unmaskedValue;
+
+    //   if (!val.startsWith('380')) {
+    //     val = '380' + val.slice(2);
+
+    //     if (val.length > 12) val = val.slice(0, 12);
+
+    //     maskInstance.unmaskedValue = val;
+    //   }
+    // });
 
     phoneMasks.push(maskInstance);
   });

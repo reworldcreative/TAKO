@@ -35,6 +35,23 @@ document.querySelector('.checkout-form').addEventListener('submit', async functi
   const form = e.target;
   const formData = new FormData(form);
   const data = Object.fromEntries(formData.entries());
+  const totalPrice = document.querySelector('.checkout-form__price-value').textContent.trim().replace(',', '.');
+  const products = document.querySelectorAll('.product-card');
+  const productList = Array.from(products).map(product => {
+    const id = product.dataset.id;
+    const title = product.querySelector('.product-card__title')?.textContent.trim() || '';
+    const quantity = product.querySelector('.product-card__counter-input')?.value || 0;
+
+    return {
+      id,
+      title,
+      quantity: Number(quantity),
+    };
+  });
+
+  data.products = productList;
+  data.totalPrice = totalPrice;
+
   window.scrollTo({
     top: 0,
     behavior: 'auto'
@@ -65,7 +82,7 @@ document.querySelector('.checkout-form').addEventListener('submit', async functi
 });
 
 function checkboxDelivery() {
-  const radios = document.querySelectorAll('input[name="delivery"]');
+  const radios = document.querySelectorAll('input[name="convenient-communication-method"]');
   const contentBlocks = document.querySelectorAll('.checkout-form__delivery-content');
 
   function updateVisibleContent(value) {
@@ -81,7 +98,7 @@ function checkboxDelivery() {
     });
   }
 
-  const initial = document.querySelector('input[name="delivery"]:checked');
+  const initial = document.querySelector('input[name="convenient-communication-method"]:checked');
   if (initial) updateVisibleContent(initial.value);
 
   radios.forEach(radio => {

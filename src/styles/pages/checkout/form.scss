@@ -180,6 +180,28 @@
     @media (max-width: 768px) {
       margin: 24px 0 0;
     }
+
+    &_desktop {
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+
+    &_mobile {
+      order: 3;
+      display: none;
+
+      @media (max-width: 768px) {
+        display: grid;
+        margin: 0;
+      }
+    }
+  }
+
+  &__left {
+    @media (max-width: 768px) {
+      order: 2;
+    }
   }
 
   &__products {
@@ -188,6 +210,7 @@
     grid-auto-rows: max-content;
     gap: 16px;
     margin: 16px 0 0;
+    padding: 0 2px 0px 0;
     max-height: 700px;
     overflow-y: scroll;
     flex: 1;
@@ -294,6 +317,11 @@
     @media (max-width: 1023px) {
       padding: 0 0 24px;
       border-top: none;
+    }
+
+    @media (max-width: 768px) {
+      padding: 0;
+      border-bottom: none;
     }
   }
 

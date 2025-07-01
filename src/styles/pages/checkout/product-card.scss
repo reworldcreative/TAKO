@@ -11,7 +11,15 @@
 
   @media (max-width: 1024px) {
     padding: 8px 16px 16px 8px;
+  }
 
+  @media (max-width: 768px) {
+    grid-template-columns: 116px 1fr;
+  }
+
+  @media (max-width: 360px) {
+    grid-template-columns: 100%;
+    gap: 10px;
   }
 
   &__image {
@@ -27,6 +35,16 @@
     @media (max-width: 1024px) {
       grid-row: 1;
     }
+
+    @media (max-width: 768px) {
+      grid-row: span 2;
+      width: 116px;
+      height: 116px;
+    }
+
+    @media (max-width: 540px) {
+      grid-row: 1;
+    }
   }
 
   &__top {
@@ -36,6 +54,14 @@
     align-self: flex-start;
     padding: 16px 0 0;
     gap: 32px;
+
+    @media (max-width: 540px) {
+      padding: 8px 0 0;
+    }
+
+    @media (max-width: 360px) {
+      padding: 0;
+    }
   }
 
   &__title {
@@ -53,6 +79,15 @@
 
     @media (max-width: 1024px) {
       max-width: 90%;
+    }
+
+    @media (max-width: 540px) {
+      -webkit-line-clamp: 5;
+      max-width: 87%;
+    }
+
+    @media (max-width: 360px) {
+      max-width: 100%;
     }
   }
 
@@ -93,11 +128,28 @@
     @media (max-width: 1024px) {
       grid-column: span 2;
     }
+
+    @media (max-width: 768px) {
+      grid-column: 2;
+    }
+
+    @media (max-width: 540px) {
+      grid-column: span 2;
+    }
+
+    @media (max-width: 360px) {
+      grid-column: 1;
+      flex-wrap: wrap;
+    }
   }
 
   &__price {
     color: $primary-text;
     text-align: right;
+
+    @media (max-width: 360px) {
+      margin: 0 0 0 auto;
+    }
 
     &-value {
       font-size: 16px;
@@ -124,20 +176,21 @@
     align-items: center;
     gap: 8px;
 
-    input[type=number]::-webkit-inner-spin-button,
-    input[type=number]::-webkit-outer-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
-
-    input[type=number] {
-      -moz-appearance: textfield;
-    }
-
     &-input {
       padding: 10px;
       max-width: 64px;
       text-align: center;
+      -moz-appearance: textfield;
+
+      @media (max-width: 768px) {
+        padding: 10px;
+      }
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
     }
 
     &-icon {
