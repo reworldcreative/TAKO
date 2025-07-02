@@ -215,6 +215,19 @@
       order: 3;
       display: none;
 
+      &.empty {
+        .checkout-form {
+          &__categories-link {
+            display: flex;
+          }
+
+          &__button-submit,
+          &__button-submit-and-support {
+            display: none;
+          }
+        }
+      }
+
       @media (max-width: 768px) {
         display: grid;
         margin: 0;
@@ -285,6 +298,7 @@
     }
 
     &__caption {
+      margin: 8px 0 0;
       color: $primary-text;
       text-align: center;
       font-size: 22px;
@@ -292,6 +306,12 @@
       font-weight: 300;
       line-height: 1.2;
       letter-spacing: 0.352px;
+
+      @media (max-width: 767px) {
+        font-size: 16px;
+        line-height: 1.4;
+        letter-spacing: 0.256px;
+      }
 
       &-accent {
         color: $primary-blue;
@@ -305,6 +325,11 @@
       font-weight: 300;
       line-height: 1.2;
       letter-spacing: 0.224px;
+
+      @media (max-width: 767px) {
+        font-size: 12px;
+        letter-spacing: 0.192px;
+      }
     }
   }
 

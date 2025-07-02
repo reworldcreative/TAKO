@@ -23,6 +23,7 @@ export function products() {
 
   const productsList = document.querySelector('.checkout-form__products');
   const preorderBlock = document.querySelector('.checkout-form__preorder');
+  const preorderBlockMobile = document.querySelector('.checkout-form__second-block_mobile');
   const total = document.querySelector('.checkout-form__price-value');
 
   const updateTotal = () => {
@@ -48,9 +49,13 @@ export function products() {
 
     if (products.length === 0) {
       preorderBlock.classList.add('empty');
+      preorderBlockMobile.classList.add('empty');
       return
     }
+
     preorderBlock.classList.remove('empty');
+    preorderBlockMobile.classList.remove('empty');
+
   };
 
   const attachListeners = (product) => {
