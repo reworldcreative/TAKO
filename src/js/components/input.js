@@ -3,6 +3,7 @@ import IMask from 'imask';
 export function input() {
   const numericInputs = document.querySelectorAll('.input_numeric');
   const phoneInputs = document.querySelectorAll('.input_phone');
+  const telegramInputs = document.querySelectorAll('.input_telegram');
   const phoneMasks = [];
 
   numericInputs.forEach(input => {
@@ -17,12 +18,11 @@ export function input() {
       startsWith,
       lazy: true,
       placeholderChar: ' ',
-      country,
     };
   }
 
   const masks = [
-    createMask('+{380} (00) 000-00-00', '380', 'UA'),
+    createMask('+{38}(000)000-00-00', '380', 'UA'),
     createMask('+{1} (000) 000-0000', '1', 'US'),
     // {
     //   mask: /^\d{0,15}$/,
@@ -63,6 +63,74 @@ export function input() {
 
     phoneMasks.push(maskInstance);
   });
+
+
+  telegramInputs.forEach((input) => {
+    let currentMaskType = '';
+
+    const maskInstance = IMask(input, {
+      mask: [
+        {
+          mask: '+{38}(000)000-00-00', // UA
+          lazy: true,
+          placeholderChar: ' ',
+        },
+        {
+          mask: '+{1}(000)000-0000', // US
+          lazy: true,
+          placeholderChar: ' ',
+        },
+        {
+          // username
+          mask: new IMask.MaskedRegExp({
+            mask: /^@[\w\d_]{0,32}$/,
+          }),
+          lazy: false,
+        },
+        {
+          mask: new IMask.MaskedRegExp({
+            mask: /^[^\s]{0,32}$/,
+          }),
+          lazy: false,
+        },
+      ],
+      dispatch: function (appended, dynamicMasked) {
+        const rawValue = dynamicMasked.value + appended;
+        const value = rawValue.trim();
+        const numeric = value.replace(/\D/g, '');
+
+        // reset
+        if (value === '') {
+          currentMaskType = '';
+        }
+
+        // username
+        if (currentMaskType === 'username' || value.startsWith('@')) {
+          currentMaskType = 'username';
+          return dynamicMasked.compiledMasks[2];
+        }
+
+        // US 
+        if (value.startsWith('+1') || numeric.startsWith('1')) {
+          currentMaskType = 'us';
+          return dynamicMasked.compiledMasks[1];
+        }
+
+        // UA
+        if (
+          value.startsWith('+38') ||
+          numeric.startsWith('380') ||
+          numeric.startsWith('0') ||
+          /^[\d\+]+$/.test(value)
+        ) {
+          currentMaskType = 'ua';
+          return dynamicMasked.compiledMasks[0];
+        }
+
+        return dynamicMasked.compiledMasks[3]; // default
+      },
+    });
+  });
 }
 
 export function search(list) {
@@ -83,6 +151,7 @@ export function search(list) {
 
   input.addEventListener('input', () => {
     const query = input.value.trim().toLowerCase();
+
     clearSuggestions();
 
     if (query.length === 0) return;
@@ -108,14 +177,21 @@ export function search(list) {
     });
   });
 
+  input.addEventListener('focus', () => {
+    if (suggestionsList.children.length > 0) {
+      suggestionsContainer.classList.add('open');
+    }
+  });
+
   document.addEventListener('click', (e) => {
     if (!input.contains(e.target) && !suggestionsContainer.contains(e.target)) {
-      clearSuggestions();
+      // clearSuggestions();
+      suggestionsContainer.classList.remove('open');
     }
   });
 }
 
-export function createDropdown(element, options) {
+export function createDropdown(element, options, isSearch = false) {
   const inputEvent = new Event('input', { bubbles: true })
   const dropdown = document.querySelector(element);
   const btn = dropdown.querySelector('.dropdown__button');
@@ -151,17 +227,19 @@ export function createDropdown(element, options) {
 
   updateSuggestions(options);
 
-  input.addEventListener('input', () => {
-    const query = input.value.trim().toLowerCase();
-    if (query === '') {
-      updateSuggestions(options);
-      dropdown.classList.add('open');
-      suggestionsContainer.classList.add('open');
-    } else {
-      const filtered = options.filter(opt => opt.toLowerCase().includes(query));
-      updateSuggestions(filtered);
-    }
-  });
+  if (isSearch) {
+    input.addEventListener('input', () => {
+      const query = input.value.trim().toLowerCase();
+      if (query === '') {
+        updateSuggestions(options);
+        dropdown.classList.add('open');
+        suggestionsContainer.classList.add('open');
+      } else {
+        const filtered = options.filter(opt => opt.toLowerCase().includes(query));
+        updateSuggestions(filtered);
+      }
+    });
+  }
 
   input.addEventListener('focus', () => {
     if (suggestionsList.children.length > 0) {

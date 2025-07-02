@@ -204,6 +204,8 @@
       &:hover {
         background: $badge;
         color: $primary-white;
+        outline: none;
+        border: 1px solid $primary-blue;
       }
     }
 

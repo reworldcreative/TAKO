@@ -22,6 +22,7 @@ export function products() {
   productCard();
 
   const productsList = document.querySelector('.checkout-form__products');
+  const preorderBlock = document.querySelector('.checkout-form__preorder');
   const total = document.querySelector('.checkout-form__price-value');
 
   const updateTotal = () => {
@@ -44,17 +45,36 @@ export function products() {
     });
 
     total.textContent = sum.toFixed(2).replace('.', ',');
+
+    if (products.length === 0) {
+      preorderBlock.classList.add('empty');
+      return
+    }
+    preorderBlock.classList.remove('empty');
   };
 
-  const attachListeners = () => {
+  const attachListeners = (product) => {
+    const input = product.querySelector('.product-card__counter-input');
+    input.addEventListener('input', updateTotal);
+  };
+
+  const attachListenersToAllProducts = () => {
     const products = productsList.querySelectorAll('.product-card');
     products.forEach(product => {
-      const input = product.querySelector('.product-card__counter-input');
-      input.addEventListener('input', updateTotal);
+      attachListeners(product);
     });
   };
 
-  attachListeners();
+  const observer = new MutationObserver(() => {
+    attachListenersToAllProducts();
+    updateTotal();
+  });
+
+  observer.observe(productsList, {
+    childList: true,
+  });
+
+  attachListenersToAllProducts();
 
   observeProductRemoval(() => {
     updateTotal();

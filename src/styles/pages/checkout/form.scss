@@ -77,6 +77,7 @@
   }
 
   &__fieldset {
+    position: relative;
     display: grid;
     gap: 8px;
     padding: 0;
@@ -87,6 +88,12 @@
       font-weight: 400;
       line-height: 1.2;
       letter-spacing: 0.196px;
+    }
+
+    .just-validate-error-label {
+      position: absolute;
+      top: 100%;
+      color: $primary-red;
     }
   }
 
@@ -170,6 +177,23 @@
         display: none;
       }
     }
+
+    &.empty {
+      .checkout-form {
+
+        &__empty-message,
+        &__categories-link {
+          display: flex;
+        }
+
+        &__products,
+        &__price,
+        &__button-submit,
+        &__button-submit-and-support {
+          display: none;
+        }
+      }
+    }
   }
 
   &__second-block {
@@ -219,6 +243,10 @@
       margin: 0 0 20px;
     }
 
+    &.empty {
+      display: none;
+    }
+
     &::-webkit-scrollbar {
       width: 2px;
       height: 2px;
@@ -230,20 +258,54 @@
       border-radius: 8px;
       background: $primary-blue;
     }
+  }
 
-    // &_desktop {
-    //   @media (max-width: 1023px) {
-    //     display: none;
-    //   }
-    // }
+  &__empty-message {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 16px auto;
+    text-align: center;
 
-    // &_mobile {
-    //   display: none;
+    &.show {
+      display: flex;
+    }
+  }
 
-    //   @media (max-width: 1023px) {
-    //     display: grid;
-    //   }
-    // }
+  .empty {
+    &__icon {
+      width: 112px;
+      max-width: 112px;
+      min-width: 112px;
+      height: 112px;
+      max-height: 112px;
+      min-height: 112px;
+    }
+
+    &__caption {
+      color: $primary-text;
+      text-align: center;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 1.2;
+      letter-spacing: 0.352px;
+
+      &-accent {
+        color: $primary-blue;
+      }
+    }
+
+    &__text {
+      margin: 8px 0 0;
+      color: $links-gray;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.2;
+      letter-spacing: 0.224px;
+    }
   }
 
   &__bottom {
@@ -270,6 +332,10 @@
       font-size: 14px;
       font-weight: 700;
     }
+  }
+
+  &__categories-link {
+    display: none;
   }
 
   &__buttons {
@@ -322,6 +388,10 @@
     @media (max-width: 768px) {
       padding: 0;
       border-bottom: none;
+    }
+
+    &.hide {
+      display: none;
     }
   }
 

@@ -30,6 +30,10 @@
       color: $border;
     }
   }
+
+  &~.just-validate-error-label {
+    padding: 0 0 0 12px;
+  }
 }
 
 .search,
@@ -83,6 +87,10 @@
 
     &::placeholder {
       color: $links-gray;
+    }
+
+    &~.just-validate-error-label {
+      padding: 0;
     }
   }
 

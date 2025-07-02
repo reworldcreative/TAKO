@@ -85,4 +85,16 @@
       letter-spacing: 0.112px;
     }
   }
+
+  &.disabled,
+  &:disabled {
+    pointer-events: none;
+    background: $border;
+    color: $links-gray;
+    border: 1px solid $border;
+  }
+
+  &.hide {
+    display: none;
+  }
 }
