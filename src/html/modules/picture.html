@@ -9,7 +9,7 @@
     {{/if}}
 
     {{#if mediumWebpSrc}}
-    <source type="image/webp" srcset="{{mediumWebpSrc}}" media="(min-width: 576px) and (max-width: 1023px)">
+    <source type="image/webp" srcset="{{mediumWebpSrc}}" media="{{#unless mediumWebpSrc}}(min-width: 576px) and {{/unless}} (max-width: 1023px)">
     {{/if}}
 
     {{#if smallWebpSrc}}
@@ -20,7 +20,7 @@
     <source srcset="{{src}}" media="(min-width: 1024px)">
     {{/if}}
     {{#if mediumSrc}}
-    <source srcset="{{mediumSrc}}" media="(min-width: 576px) and (max-width: 1023px)">
+    <source srcset="{{mediumSrc}}" media="{{#unless smallSrc}}(min-width: 576px) and {{/unless}} (max-width: 1023px)">
     {{/if}}
     {{#if smallSrc}}
     <source srcset="{{smallSrc}}" media="(max-width: 575px)">
