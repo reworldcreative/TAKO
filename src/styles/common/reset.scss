@@ -74,6 +74,28 @@ sup {
   top: -0.5em;
 }
 
+picture {
+  pointer-events: none;
+}
+
+picture,
+img[draggable="false"] {
+  user-select: none;
+  -webkit-user-drag: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-drag: none;
+}
+
+picture.draggable,
+img[draggable="true"] {
+  user-select: auto;
+  -webkit-user-drag: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-drag: auto;
+}
+
 img {
   border-style: none;
 }

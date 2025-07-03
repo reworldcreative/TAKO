@@ -1,4 +1,4 @@
-<picture class="{{className}}">
+<picture class="{{className}} {{#if draggable}}draggable{{/if}}">
     {{#if webpSrc}}
     {{#if mediumWebpSrc}}
         <source type="image/webp" srcset="{{webpSrc}}" media="(min-width: 1024px)">
@@ -28,6 +28,7 @@
 
     <img src="{{src}}" alt="{{alt}}" 
     {{#if className}} class="{{className}}" {{/if}} 
+    draggable="{{#if draggable}}{{draggable}}{{else}}false{{/if}}"
     {{#if width}} width="{{width}}" {{/if}} 
     {{#if height}} height="{{height}}" {{/if}} 
     {{#if lazy}} loading="lazy" {{/if}}>
