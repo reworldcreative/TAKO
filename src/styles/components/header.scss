@@ -1,6 +1,6 @@
 .header {
   position: relative;
-  z-index: 1;
+  z-index: 10;
   border-bottom: 1px solid $gray;
   padding: 0 8px;
   background: $primary-white;
@@ -277,6 +277,18 @@
   transition:
     opacity 0.2s ease-in-out,
     scale 0s ease-in-out 0.2s;
+
+  &::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    background-clip: content-box;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: $primary-blue;
+  }
 
   &.show {
     scale: 1;
