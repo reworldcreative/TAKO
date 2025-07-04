@@ -3,6 +3,7 @@ import { howWorkSlider } from "@/js/pages/home/how-work";
 import { reviewsSlider } from "@/js/pages/home/reviews";
 import { globalSettings } from "@/js/utils/global";
 import { acknowledgmentsSlider } from "@/js/pages/home/acknowledgments";
+import { mediaAboutUsSlider } from "@/js/pages/home/media-about-us";
 
 document.addEventListener('DOMContentLoaded', () => {
   globalSettings();
@@ -10,4 +11,5 @@ document.addEventListener('DOMContentLoaded', () => {
   howWorkSlider();
   reviewsSlider();
   acknowledgmentsSlider();
+  mediaAboutUsSlider();
 });
