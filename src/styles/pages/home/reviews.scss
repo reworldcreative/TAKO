@@ -171,18 +171,20 @@
 
     &:has(.reviews__swiper-button-prev.swiper-button-disabled) {
       .reviews__swiper-button-prev {
-        width: 360px;
+        width: 31%;
+        max-width: 360px;
 
         @media (max-width: 1440px) {
-          width: 320px;
+          max-width: 320px;
         }
 
         @media (max-width: 1024px) {
-          width: 213px;
+          max-width: 213px;
         }
 
         @media (max-width: 378px) {
-          width: 125px;
+          width: 50%;
+          max-width: 125px;
         }
       }
     }
@@ -190,6 +192,7 @@
     &:has(.reviews__swiper-button-next.swiper-button-disabled) {
       .reviews__swiper-button-prev {
         width: 100%;
+        max-width: 100%;
       }
     }
   }
@@ -198,7 +201,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    transition: width 0.2s ease-in-out;
+    gap: 8px;
+    transition: width 0.2s ease-in-out, max-width 0.2s ease-in-out;
 
     @media (hover: hover) {
       &:hover {
@@ -216,7 +220,7 @@
       pointer-events: none;
 
       &.button_bordered {
-        border: none;
+        border: 1px solid $light-gray;
       }
 
       @media (hover: hover) {
@@ -238,6 +242,11 @@
       @media (max-width: 1024px) {
         font-size: 16px;
         font-weight: 500;
+      }
+
+      @media (max-width: 765px) {
+        font-size: 14px;
+        font-weight: 700;
       }
     }
 
@@ -270,15 +279,16 @@
     }
 
     &-prev {
-      width: 360px;
+      width: 31%;
+      max-width: 360px;
       padding: 22px 32px 22px 24px;
 
       @media (max-width: 1440px) {
-        width: 320px;
+        max-width: 320px;
       }
 
       @media (max-width: 1024px) {
-        width: 213px;
+        max-width: 213px;
         padding: 16px 28px 16px 20px;
       }
 
@@ -287,7 +297,8 @@
       }
 
       @media (max-width: 378px) {
-        width: 125px;
+        width: 50%;
+        max-width: 125px;
       }
 
       .icon {
@@ -297,6 +308,7 @@
 
     &-next {
       width: 100%;
+      max-width: 100%;
       padding: 22px 24px 22px 32px;
       border: 1px solid $primary-blue;
 
@@ -309,20 +321,21 @@
       }
 
       &.swiper-button-disabled {
-        width: 360px;
-        border: 1px solid transparent;
-
+        width: 31%;
+        max-width: 360px;
+        border: 1px solid $light-gray;
 
         @media (max-width: 1440px) {
-          width: 320px;
+          max-width: 320px;
         }
 
         @media (max-width: 1024px) {
-          width: 213px;
+          max-width: 213px;
         }
 
         @media (max-width: 378px) {
-          width: 125px;
+          width: 50%;
+          max-width: 125px;
         }
       }
     }
@@ -391,6 +404,7 @@
     height: 100%;
 
     .image {
+      pointer-events: auto;
       width: 100%;
       max-height: 100%;
       object-fit: cover;
