@@ -12,6 +12,10 @@
       padding: 48px 24px 0;
     }
 
+    @media (prefers-color-scheme: dark) {
+      background: $light-gray;
+      color: $primary-black;
+    }
 
     .container {
       background: none;
@@ -150,6 +154,11 @@
     @media (max-width: 1440px) {
       text-align: left;
     }
+
+    @media (prefers-color-scheme: dark) {
+      background: $light-gray;
+      color: $primary-black;
+    }
   }
 
   &__third {
@@ -243,6 +252,11 @@
 
     @media (max-width: 373px) {
       flex-wrap: wrap;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      color: $primary-black;
+      border: 1px solid $primary-black;
     }
 
     .icon {

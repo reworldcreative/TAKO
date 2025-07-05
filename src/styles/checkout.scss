@@ -25,7 +25,11 @@
       color: $light-gray;
       border: 1px solid $primary-black;
       background: $primary-text;
-    }
 
+      @media (prefers-color-scheme: dark) {
+        color: $primary-black;
+        background: $light-gray;
+      }
+    }
   }
 }

@@ -3,6 +3,7 @@ import { Navigation, Pagination } from 'swiper/modules'
 
 export function acknowledgmentsSlider() {
   slider('acknowledgments__slider', {
+    zoom: true,
     slidesPerView: 1,
     spaceBetween: 5,
     modules: [Navigation, Pagination],

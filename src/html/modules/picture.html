@@ -31,5 +31,7 @@
     draggable="{{#if draggable}}{{draggable}}{{else}}false{{/if}}"
     {{#if width}} width="{{width}}" {{/if}} 
     {{#if height}} height="{{height}}" {{/if}} 
-    {{#if lazy}} loading="lazy" {{/if}}>
+    {{#if lazy}} loading="lazy" {{/if}}
+    {{#if hidden}} aria-hidden="true" {{/if}}
+    >
 </picture>

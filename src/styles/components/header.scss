@@ -56,6 +56,7 @@
   &__logo {
     width: 160px;
     height: 36px;
+    color: $primary-text;
 
     @media (max-width: 1420px) {
       display: none;
@@ -65,6 +66,7 @@
       display: none;
       width: 45px;
       height: 40px;
+      color: $primary-text;
 
       @media (max-width: 1420px) {
         display: block;
@@ -316,6 +318,10 @@
     line-height: 1.2;
     letter-spacing: 0.168px;
     color: $light-gray;
+
+    @media (prefers-color-scheme: dark) {
+      color: $primary-black;
+    }
   }
 
   &__caption {

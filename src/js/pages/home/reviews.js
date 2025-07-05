@@ -33,6 +33,8 @@ export function reviewsSlider() {
 
   const target = document.querySelector('.reviews');
 
+  if (!target) return
+
   const observer = new IntersectionObserver((entries, observer) => {
     if (entries[0].isIntersecting) {
       const script = document.createElement('script');
@@ -46,7 +48,7 @@ export function reviewsSlider() {
       observer.unobserve(target);
     }
   }, {
-    threshold: 0.1
+    threshold: 0.01
   });
 
   observer.observe(target);

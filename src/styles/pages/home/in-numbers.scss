@@ -243,6 +243,10 @@
     &_light {
       background: $primary-text;
 
+      @media (prefers-color-scheme: dark) {
+        background: $gray;
+      }
+
       .in-numbers {
         &__item {
 
@@ -250,16 +254,30 @@
           &-value {
             color: $primary-white;
             mix-blend-mode: lighten;
+
+            @media (prefers-color-scheme: dark) {
+              mix-blend-mode: unset;
+              color: $primary-text;
+            }
           }
 
           &-text {
             color: $light-gray;
             mix-blend-mode: lighten;
+
+            @media (prefers-color-scheme: dark) {
+              mix-blend-mode: unset;
+              color: $links-gray;
+            }
           }
         }
 
         &__img {
           mix-blend-mode: luminosity;
+
+          @media (prefers-color-scheme: dark) {
+            mix-blend-mode: unset;
+          }
         }
       }
     }
@@ -282,6 +300,10 @@
 
         &__img {
           mix-blend-mode: darken;
+
+          @media (prefers-color-scheme: dark) {
+            mix-blend-mode: unset;
+          }
         }
       }
     }

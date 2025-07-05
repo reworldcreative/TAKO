@@ -67,6 +67,10 @@
     border: 2px solid $light-gray;
     background: $primary-white;
 
+    @media (prefers-color-scheme: dark) {
+      color: $primary-black;
+    }
+
     @media (max-width: 767px) {
       padding: 24px 16px 16px;
     }

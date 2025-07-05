@@ -57,6 +57,10 @@
     color: $primary-white;
     margin: 0 0 48px 0;
 
+    @media (prefers-color-scheme: dark) {
+      color: $primary-black;
+    }
+
     @media (max-width: 1440px) {
       font-size: 56px;
       font-weight: 300;

@@ -155,6 +155,10 @@
           height: 12px;
           border-radius: 50%;
           background: $primary-white;
+
+          @media (prefers-color-scheme: dark) {
+            background: $primary-black;
+          }
         }
       }
     }

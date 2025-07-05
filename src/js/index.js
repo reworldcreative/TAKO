@@ -4,6 +4,7 @@ import { reviewsSlider } from "@/js/pages/home/reviews";
 import { globalSettings } from "@/js/utils/global";
 import { acknowledgmentsSlider } from "@/js/pages/home/acknowledgments";
 import { mediaAboutUsSlider } from "@/js/pages/home/media-about-us";
+import { copyBankDetails } from "@/js/pages/home/bank-details";
 
 document.addEventListener('DOMContentLoaded', () => {
   globalSettings();
@@ -12,4 +13,5 @@ document.addEventListener('DOMContentLoaded', () => {
   reviewsSlider();
   acknowledgmentsSlider();
   mediaAboutUsSlider();
+  copyBankDetails();
 });

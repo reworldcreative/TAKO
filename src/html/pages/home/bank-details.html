@@ -1,0 +1,86 @@
+<section class='section bank-details'>
+  <div class="container bank-details__container">
+    <div class='bank-details__first'>
+      <h2 class='bank-details__title'>Основні реквізити нашої команди:</h2>
+
+      <div class='bank-details__content'>
+        <div class='bank-details__item'>
+          <p class='bank-details__text'>iBan рахунок:</p>
+
+          <button class='bank-details__button' type='button'>
+            <span class='bank-details__details'>UA393052990000026006036707396</span>
+
+            <svg class="button-icon button-icon_right">
+              <use xlink:href="#copy"></use>
+            </svg>
+          </button>
+        </div>
+
+        <div class='bank-details__item'>
+          <p class='bank-details__text'>USDT (TRC20):</p>
+
+          <button class='bank-details__button' type='button'>
+            <span class='bank-details__details'>TBADxfHcg8UkCUiAMQsgpfu4YAUU3Vr5sD</span>
+
+            <svg class="button-icon button-icon_right">
+              <use xlink:href="#copy"></use>
+            </svg>
+          </button>
+        </div>
+
+        <div class='bank-details__item'>
+          <p class='bank-details__text'>BTC:</p>
+
+          <button class='bank-details__button' type='button'>
+            <span class='bank-details__details'>1GgPsc38dMJ54uWGFsnEBMd2ZamDXxrAfA</span>
+
+            <svg class="button-icon button-icon_right">
+              <use xlink:href="#copy"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class='bank-details__second'>
+      {{>modules/picture className="bank-details__image" src="/img/bank-details/bank-details-bg.png"
+      webpSrc="/img/bank-details/bank-details-bg.webp" width="899" height="485" alt="bank details" lazy=true
+      hidden=true}}
+
+      <div class='bank-details__wrapper'>
+        <svg class="bank-details__corner">
+          <use xlink:href="#corner"></use>
+        </svg>
+
+        <div class='bank-details__block'>
+          <p class='bank-details__caption'>Наближуй перемогу разом з нами</p>
+
+          <div class='bank-details__code-wrapper'>
+            <svg class="bank-details__corner-line top left">
+              <use xlink:href="#corner-line"></use>
+            </svg>
+
+            <svg class="bank-details__corner-line bottom left">
+              <use xlink:href="#corner-line"></use>
+            </svg>
+
+            <svg class="bank-details__corner-line top right">
+              <use xlink:href="#corner-line"></use>
+            </svg>
+
+            <svg class="bank-details__corner-line bottom right">
+              <use xlink:href="#corner-line"></use>
+            </svg>
+
+            {{>modules/picture className="bank-details__qr-code" src="/img/bank-details/qr.jpg"
+            webpSrc="/img/bank-details/qr.webp" width="180" height="180" alt="qr code" lazy=true}}
+          </div>
+
+          <button class='button button_yellow bank-details__donate-button' type='button'>
+            Задонатити ТА-КО
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

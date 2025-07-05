@@ -15,6 +15,11 @@
     color: $primary-white;
     background: $primary-text;
 
+    @media (prefers-color-scheme: dark) {
+      color: $primary-black;
+      background: $light-gray;
+    }
+
     @media (max-width: 1024px) {
       padding: 48px 24px;
     }
@@ -34,6 +39,10 @@
       border-bottom: 2px solid $gray;
     }
 
+    @media (prefers-color-scheme: dark) {
+      color: $primary-black;
+      border-bottom: 1px solid $primary-black;
+    }
   }
 
   &__text {
