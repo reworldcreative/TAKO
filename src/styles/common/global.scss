@@ -4,6 +4,10 @@
 @import "../ui/buttons";
 @import "../ui/inputs";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "e-Ukraine", sans-serif;
   background: $gray;
@@ -15,7 +19,14 @@ body {
 }
 
 .layout {
+  min-height: calc(100dvh - 80px);
+  display: flex;
+  flex-direction: column;
   padding: 0 8px;
+
+  .main {
+    flex: 1;
+  }
 }
 
 .section {
@@ -61,5 +72,28 @@ body {
 
   @media (max-width: 1420px) {
     padding: 64px 0;
+  }
+}
+
+.modal {
+  &__bg {
+    position: fixed;
+    display: none;
+    z-index: 1;
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    background: $primary-text;
+
+    &.show {
+      display: block;
+    }
+
+    &.show-modal {
+      display: block;
+      z-index: 11;
+    }
   }
 }

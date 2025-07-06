@@ -1,4 +1,5 @@
 import { disablePageScroll, enablePageScroll } from '@fluejs/noscroll';
+import { contactModal } from './contact-modal';
 
 export function header() {
   const header = document.querySelector('.header')
@@ -6,7 +7,7 @@ export function header() {
   const burgerMenuButton = document.querySelector('.header__menu-button')
   const productsButton = document.querySelector('.header__products-button')
   const productsMenu = document.querySelector('.header__products')
-  const headerBG = document.querySelector('.header__bg')
+  const modalBG = document.querySelector('.modal__bg')
 
 
   burgerMenuButton.addEventListener('click', () => {
@@ -23,7 +24,7 @@ export function header() {
   productsButton.addEventListener('click', (el) => {
     el.target.classList.toggle('active')
     productsMenu.classList.toggle('show')
-    headerBG.classList.toggle('show')
+    modalBG.classList.toggle('show')
 
     if (productsMenu.classList.contains('show')) {
       disablePageScroll()
@@ -32,12 +33,12 @@ export function header() {
     }
   })
 
-  headerBG.addEventListener('click', () => {
+  modalBG.addEventListener('click', () => {
     header.classList.remove('open-burger')
     burgerMenu.classList.remove('show')
     productsButton.classList.remove('active')
     productsMenu.classList.remove('show')
-    headerBG.classList.remove('show')
+    modalBG.classList.remove('show')
     enablePageScroll()
   })
 
@@ -47,7 +48,7 @@ export function header() {
       burgerMenu.classList.remove('show')
       productsButton.classList.remove('active')
       productsMenu.classList.remove('show')
-      headerBG.classList.remove('show')
+      modalBG.classList.remove('show')
 
       if (header.classList.contains('open-burger') || productsMenu.classList.contains('show')) {
         disablePageScroll()
@@ -56,4 +57,6 @@ export function header() {
       }
     }
   })
+
+  contactModal();
 }

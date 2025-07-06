@@ -10,6 +10,7 @@ $badge: var(--badge);
 $border: var(--border);
 $primary-yellow: var(--primary-yellow);
 $primary-red: var(--primary-red);
+$bg-transparent: var(--bg-transparent);
 
 
 :root {
@@ -25,6 +26,7 @@ $primary-red: var(--primary-red);
   --border: #d0d0d033;
   --primary-yellow: #FFD719;
   --primary-red: #a32f2f;
+  --bg-transparent: #1c2f4366;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -41,5 +43,6 @@ $primary-red: var(--primary-red);
     --border: #ffffff33;
     --primary-yellow: #FFE15A;
     --primary-red: #ff5c5c;
+    --bg-transparent: #1c2f4366;
   }
 }

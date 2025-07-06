@@ -6,7 +6,7 @@ import 'swiper/css/pagination';
 export function howWorkSlider() {
   const infoBlocks = document.querySelectorAll('.how-work__info-block');
 
-  slider('how-work__slider', {
+  const infoBlocksSlider = slider('how-work__slider', {
     slidesPerView: 1,
     spaceBetween: 5,
     modules: [Navigation, Pagination],
@@ -29,5 +29,15 @@ export function howWorkSlider() {
         })
       }
     }
+  });
+
+  const infoButtons = document.querySelectorAll('.how-work__info-block');
+
+  infoButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      if (index !== -1) {
+        infoBlocksSlider.slideTo(index)
+      }
+    })
   });
 }

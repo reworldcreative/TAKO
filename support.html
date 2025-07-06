@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support</title>
+  <meta name="description"
+    content="Fill out the order form for drone components and other products from the Tako initiative. Fast delivery and support for our defenders.">
+
+
+  <link rel="stylesheet" href="/src/styles/support.scss">
+</head>
+
+<body>
+  {{>components/header}}
+  {{>components/toaster}}
+
+  <div class='layout support'>
+
+    <main class='main support__main'>
+      {{>pages/home/bank-details}}
+    </main>
+
+    {{>components/footer}}
+  </div>
+
+  {{>components/sprite }}
+  <script type="module" src="/src/js/support.js"></script>
+</body>
+
+</html>

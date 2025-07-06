@@ -1,4 +1,4 @@
-<div class='header__bg'></div>
+<div class='modal__bg'></div>
 
 <header class='header'>
   <div class='container header__container'>
@@ -30,17 +30,17 @@
           </button>
 
           <div class="navigation__list">
-            <a class="navigation__link" href="#">Про нас</a>
-            <a class="navigation__link" href="#">Як ми працюємо</a>
-            <a class="navigation__link" href="#">Партнери</a>
-            <a class="navigation__link" href="#">Відгуки</a>
+            <a class="navigation__link" href="index.html#about-us">Про нас</a>
+            <a class="navigation__link" href="index.html#how-work">Як ми працюємо</a>
+            <a class="navigation__link" href="index.html#partners">Партнери</a>
+            <a class="navigation__link" href="index.html#reviews">Відгуки</a>
           </div>
         </nav>
       </div>
 
       <div class='header__buttons'>
-        <button class='button button_bordered header__button-contacts' type='button'>Зв’язатися</button>
-        <button class='button button_bordered' type='button'>Підтримати</button>
+        <button class='button contacts-button button_bordered header__button-contacts' type='button'>Зв’язатися</button>
+        <a href='support.html' class='button button_bordered'>Підтримати</a>
         <a href='checkout.html' class='button button_background header__button-badge'>
           <svg class="button-icon button-icon_left">
             <use xlink:href="#backpack"></use>
@@ -223,11 +223,11 @@
     <div class='burger-menu__block'>
       <nav class="burger-menu__navigation">
         <div class="burger-menu__navigation-list">
-          <a class="burger-menu__navigation-link" href="#">Головна</a>
-          <a class="burger-menu__navigation-link" href="#">Про нас</a>
-          <a class="burger-menu__navigation-link" href="#">Як ми працюємо</a>
-          <a class="burger-menu__navigation-link" href="#">Партнери</a>
-          <a class="burger-menu__navigation-link" href="#">Відгуки</a>
+          <a class="burger-menu__navigation-link" href="index.html">Головна</a>
+          <a class="burger-menu__navigation-link" href="index.html#about-us">Про нас</a>
+          <a class="burger-menu__navigation-link" href="index.html#how-work">Як ми працюємо</a>
+          <a class="burger-menu__navigation-link" href="index.html#partners">Партнери</a>
+          <a class="burger-menu__navigation-link" href="index.html#reviews">Відгуки</a>
         </div>
       </nav>
     </div>
@@ -268,8 +268,10 @@
           </li>
         </ul>
 
-        <button class='button burger-menu__button-contact' type='button'>Зв’язатися</button>
+        <button class='button contacts-button burger-menu__button-contact' type='button'>Зв’язатися</button>
       </div>
     </div>
   </div>
 </div>
+
+{{>components/contact-modal}}

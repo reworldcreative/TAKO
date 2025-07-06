@@ -9,6 +9,10 @@ const pages = [
     name: 'checkout',
     path: resolve(__dirname, './checkout.html'),
   },
+  {
+    name: 'support',
+    path: resolve(__dirname, './support.html'),
+  },
 ]
 
 export default pages

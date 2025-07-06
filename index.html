@@ -16,19 +16,22 @@
   {{>components/toaster}}
 
   <div class='layout'>
-    {{>pages/home/hero}}
-    {{>pages/home/about}}
-    {{>pages/home/partners}}
-    {{>pages/home/in-numbers}}
-    {{>pages/home/how-work}}
-    {{>pages/home/products}}
-    {{>pages/home/reviews}}
-    {{>pages/home/acknowledgments}}
-    {{>pages/home/media-about-us}}
-    {{>pages/home/bank-details}}
+    <main class='main'>
+      {{>pages/home/hero}}
+      {{>pages/home/about}}
+      {{>pages/home/partners}}
+      {{>pages/home/in-numbers}}
+      {{>pages/home/how-work}}
+      {{>pages/home/products}}
+      {{>pages/home/reviews}}
+      {{>pages/home/acknowledgments}}
+      {{>pages/home/media-about-us}}
+      {{>pages/home/bank-details}}
+    </main>
+
+    {{>components/footer}}
   </div>
 
-  {{>components/footer}}
   {{>components/sprite }}
   <script type="module" src="/src/js/index.js"></script>
 </body>

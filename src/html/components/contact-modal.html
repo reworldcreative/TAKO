@@ -1,0 +1,93 @@
+<div class='contact-modal'>
+  <div class='contact-modal__container'>
+    <form class='contact-modal__form' action="/">
+      <div class='contact-modal__top'>
+        <div class='contact-modal__top-wrapper'>
+          <p class='contact-modal__title'>Зв’язатися</p>
+          <p class='contact-modal__text'>Залиште своє запитання або повідомлення у формі нижче.</p>
+        </div>
+
+        <button type="button" class="contact-modal__close-button" aria-label='close modal'>
+          <svg class="contact-modal__close-icon">
+            <use xlink:href="#plus"></use>
+          </svg>
+        </button>
+      </div>
+
+      <div class='contact-modal__content'>
+        <div class='contact-modal__row'>
+          <fieldset class='contact-modal__fieldset'>
+            <label class='label' for="contact-name">Ім’я</label>
+            <input class='input' id="contact-name" name="contact-name" type="text" required autocomplete="given-name"
+              placeholder='Введіть ім’я' pattern="^[A-Za-zА-Яа-яЁёЇїІіЄєҐґ’\-]+$"
+              oninput="this.value = this.value.replace(/[^A-Za-zА-Яа-яЁёЇїІіЄєҐґ'-]/g, '')" maxlength="50">
+          </fieldset>
+
+          <fieldset class='contact-modal__fieldset'>
+            <label class='label' for="contact-phone">Номер телефону</label>
+            <input class='input input_phone' id="contact-phone" name="contact-phone" type="text" required
+              autocomplete="tel" placeholder='+380'>
+          </fieldset>
+        </div>
+
+        <fieldset class='contact-modal__fieldset'>
+          <label class='label' for="contact-email">Пошта</label>
+          <input class='input' id="contact-email" name="contact-email" type="text" required autocomplete="email"
+            placeholder='Введіть email'>
+        </fieldset>
+
+        <fieldset class='contact-modal__fieldset'>
+          <label class='label' for="contact-theme">Тема</label>
+          <div class='dropdown contacts-theme-dropdown'>
+            <input class='input input_dropdown' id="contact-theme" name="contact-theme" type="text" required readonly
+              placeholder='Оберіть тему'>
+
+            <button class='dropdown__button' type='button'>
+              <svg class="search__icon">
+                <use xlink:href="#arrow-down"></use>
+              </svg>
+            </button>
+
+            <div class="dropdown__suggestions">
+              <ul class='dropdown__suggestions-list'>
+              </ul>
+            </div>
+
+            <div class='error'></div>
+          </div>
+        </fieldset>
+
+        <fieldset class='contact-modal__fieldset'>
+          <label class='label' for="contact-comment">Коментар</label>
+          <div class='textarea contacts-modal__textarea'>
+            <textarea class='textarea__field' id="contact-comment" name="contact-comment" required
+              placeholder='Введіть email'> </textarea>
+          </div>
+        </fieldset>
+
+        <button class='button contact-modal__button-submit' type='submit'>
+          Надіслати
+        </button>
+      </div>
+    </form>
+
+    <div class='contact-modal__success'>
+      <div class='contact-modal__top'>
+        <div class='contact-modal__top-wrapper'>
+          <p class='contact-modal__title'>Успішно!</p>
+          <p class='contact-modal__text'>Дякуємо! Наш волонтер скоро зв’яжеться з вами для підтвердження деталей.</p>
+        </div>
+
+        <button type="button" class="contact-modal__close-button" aria-label='close modal'>
+          <svg class="contact-modal__close-icon">
+            <use xlink:href="#plus"></use>
+          </svg>
+        </button>
+      </div>
+
+      <button class='button contact-modal__button-submit contact-modal__close-button' type='button'>
+        Зрозуміло
+      </button>
+    </div>
+  </div>
+</div>

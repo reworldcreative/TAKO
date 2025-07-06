@@ -5,15 +5,8 @@
 @import "@/styles/pages/checkout/product-card";
 
 .checkout {
-  min-height: calc(100dvh - 80px);
-  display: flex;
-  flex-direction: column;
-
-  &__main {
-    flex: 1;
-  }
-
   &__footer {
+    margin: auto 0 0;
     padding: 0 0 8px;
 
     &-wrapper {
