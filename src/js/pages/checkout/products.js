@@ -1,30 +1,20 @@
+import { observeProductRemoval } from "@/js/components/remove-product";
+import { createElement } from "./create-element";
 import { productCard } from "./product-card";
 
-export function observeProductRemoval(callback) {
-  const container = document.querySelector('.checkout-form__products');
-
-  const observer = new MutationObserver(mutations => {
-    mutations.forEach(mutation => {
-      mutation.removedNodes.forEach(node => {
-        if (node.classList && node.classList.contains('product-card')) {
-          callback(node);
-        }
-      });
-    });
-  });
-
-  observer.observe(container, {
-    childList: true,
-  });
-}
-
 export function products() {
-  productCard();
+  const data = JSON.parse(localStorage.getItem('checkoutProducts'));
 
   const productsList = document.querySelector('.checkout-form__products');
   const preorderBlock = document.querySelector('.checkout-form__preorder');
   const preorderBlockMobile = document.querySelector('.checkout-form__second-block_mobile');
   const total = document.querySelector('.checkout-form__price-value');
+
+  data.forEach(product => {
+    productsList.appendChild(createElement(product));
+  });
+
+  productCard(productsList);
 
   const updateTotal = () => {
     const products = productsList.querySelectorAll('.product-card');
@@ -81,7 +71,7 @@ export function products() {
 
   attachListenersToAllProducts();
 
-  observeProductRemoval(() => {
+  observeProductRemoval(document.querySelector('.checkout-form__products'), () => {
     updateTotal();
   });
 

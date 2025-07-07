@@ -184,6 +184,9 @@
 
     &.empty {
       .checkout-form {
+        &__second-block {
+          margin: auto 0 0;
+        }
 
         &__empty-message,
         &__categories-link {
