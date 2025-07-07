@@ -299,7 +299,7 @@
         }
 
         &__img {
-          mix-blend-mode: darken;
+          // mix-blend-mode: darken;
 
           @media (prefers-color-scheme: dark) {
             mix-blend-mode: unset;

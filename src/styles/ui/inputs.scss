@@ -212,8 +212,8 @@
     &-list {
       overflow-y: scroll;
       max-height: 250px;
-      scrollbar-width: thin;
-      scrollbar-color: $badge transparent;
+      // scrollbar-width: thin;
+      // scrollbar-color: $badge transparent;
 
       &::-webkit-scrollbar {
         width: 2px;
