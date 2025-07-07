@@ -59,6 +59,8 @@
     font-size: 14px;
     font-weight: 300;
     letter-spacing: 0.224px;
+    color: $primary-text;
+    background: transparent;
 
     &::-webkit-scrollbar {
       width: 2px;

@@ -1,0 +1,43 @@
+<div class='side-basket'>
+  <div class='side-basket__container'>
+    <div class='side-basket__top'>
+      <p class='side-basket__title'>Передзамовлення</p>
+
+      <button class="side-basket__close-button" type="button" aria-label='close modal'>
+        <svg class="side-basket__close-icon">
+          <use xlink:href="#plus"></use>
+        </svg>
+      </button>
+    </div>
+
+    <div class='side-basket__content'>
+      {{>pages/checkout/product-card id="1"}}
+      {{>pages/checkout/product-card id="2"}}
+      {{>pages/checkout/product-card id="3"}}
+    </div>
+
+    <div class='side-basket__empty-block empty-block'>
+      {{>modules/picture className="empty-block__icon" src="/img/medkit.png" webpSrc="/img/medkit.webp"
+      width="112" height="112" alt="medkit"}}
+
+      <div class='empty-block__caption'>
+        <p class='empty-block__caption-text'>Кошик на дембель пішов — </p>
+        <p class='empty-block__caption-accent'>нічого немає</p>
+      </div>
+
+      <p class='empty-block__text'>Схоже що ваш кошик пустий</p>
+    </div>
+
+    <div class='side-basket__bottom'>
+      <a href='checkout.html' class='button side-basket__checkout-button'>Оформити</a>
+      <a href='№' class='button side-basket__categories-link'>Переглянути категорії</a>
+
+      <div class='side-basket__badge'>
+        <p class='side-basket__badge-text'>
+          <span>🪖 Для військових —</span>
+          <span class='side-basket__badge-accent'>безкоштовно</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

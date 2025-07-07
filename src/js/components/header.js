@@ -1,5 +1,6 @@
 import { disablePageScroll, enablePageScroll } from '@fluejs/noscroll';
 import { contactModal } from './contact-modal';
+import { sideBasket } from './side-basket';
 
 export function header() {
   const header = document.querySelector('.header')
@@ -59,4 +60,5 @@ export function header() {
   })
 
   contactModal();
+  sideBasket();
 }

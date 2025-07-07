@@ -1,6 +1,6 @@
 .contact-modal {
   position: absolute;
-  display: flex;
+  display: none;
   overflow-y: scroll;
   z-index: 100;
   top: 0;
@@ -8,10 +8,6 @@
   height: 100%;
   margin: auto;
   padding: 8px;
-  transform: scale(0);
-  transform-origin: top center;
-  opacity: 0;
-  transition: opacity .2s ease-in-out, transform .1s ease-in-out;
   color: $links-gray;
   background: $bg-transparent;
 
@@ -20,8 +16,7 @@
   }
 
   &.show {
-    transform: scale(1);
-    opacity: 1;
+    display: flex;
   }
 
   &__container {
@@ -30,6 +25,15 @@
     padding: 32px;
     border-radius: 8px;
     background: $primary-white;
+    transform: scale(0);
+    opacity: 0;
+    transform-origin: top center;
+    transition: opacity .2s ease-in-out, transform .1s ease-in-out;
+
+    &.show {
+      transform: scale(1);
+      opacity: 1;
+    }
 
     @media (max-width: 1024px) {
       width: 632px;
@@ -170,7 +174,7 @@
     }
   }
 
-  &__textarea {
+  .textarea {
     height: 132px;
   }
 }
