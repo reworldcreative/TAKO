@@ -13,6 +13,10 @@ const pages = [
     name: 'support',
     path: resolve(__dirname, './support.html'),
   },
+  {
+    name: 'category',
+    path: resolve(__dirname, './category.html'),
+  },
 ]
 
 export default pages

@@ -1,5 +1,5 @@
 import { slider } from '@/js/components/slider';
-import { Navigation, Pagination } from 'swiper/modules'
+import { Navigation, Pagination, EffectFade } from 'swiper/modules'
 import 'swiper/css';
 import 'swiper/css/pagination';
 
@@ -9,7 +9,8 @@ export function howWorkSlider() {
   const infoBlocksSlider = slider('how-work__slider', {
     slidesPerView: 1,
     spaceBetween: 5,
-    modules: [Navigation, Pagination],
+    effect: "fade",
+    modules: [Navigation, Pagination, EffectFade],
     navigation: {
       nextEl: '.how-work__swiper-button-next',
       prevEl: '.how-work__swiper-button-prev',

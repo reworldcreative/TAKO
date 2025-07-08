@@ -198,6 +198,7 @@
   &__slide {
     display: flex !important;
     flex-direction: column;
+    background: $gray;
 
     &-icon {
       width: fit-content;

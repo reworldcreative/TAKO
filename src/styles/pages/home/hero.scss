@@ -86,6 +86,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 10px;
     color: $primary-white;
     max-width: 554px;
     padding: 22px 24px 22px 32px;
@@ -109,7 +110,29 @@
         color: $primary-blue;
         background-color: $primary-white;
         outline: 2px solid $primary-blue;
+
+        .hero__button {
+          &-text {
+            margin: 0 0 0 28%;
+            transition: margin .2s ease-in-out;
+          }
+
+          &-icon {
+            &_right {
+              display: none;
+            }
+
+            &_center {
+              opacity: 1;
+              margin: 0 27% 0 0;
+            }
+          }
+        }
       }
+    }
+
+    &-text {
+      margin: 0;
     }
 
     &-icon {
@@ -120,6 +143,7 @@
       height: 28px;
       max-height: 28px;
       min-height: 28px;
+      transition: margin .2s ease-in-out;
 
       @media (max-width: 300px) {
         width: 20px;
@@ -128,6 +152,10 @@
         height: 20px;
         max-height: 20px;
         min-height: 20px;
+      }
+
+      &_center {
+        opacity: 0;
       }
     }
   }
