@@ -8,7 +8,7 @@ export function animateNumbers(numbersClassName) {
   const formatNumber = (num) =>
     num.toLocaleString('uk-UA');
 
-  document.querySelectorAll(`.${numbersClassName}`).forEach(counter => {
+  document.querySelectorAll(numbersClassName).forEach(counter => {
     const targetValue = +counter.dataset.target;
     const obj = { val: 0 };
 

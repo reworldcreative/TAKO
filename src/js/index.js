@@ -5,18 +5,36 @@ import { globalSettings } from "@/js/utils/global";
 import { acknowledgmentsSlider } from "@/js/pages/home/acknowledgments";
 import { mediaAboutUsSlider } from "@/js/pages/home/media-about-us";
 import { copyBankDetails } from "@/js/pages/home/bank-details";
-import { animateNumbers } from "./pages/home/animate-numbers";
 import { appearanceAnimation } from "./components/appearance-animation";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { observeElements } from "./components/observe-once";
 
 document.addEventListener('DOMContentLoaded', () => {
+  const observeConfigs = [
+    {
+      selector: ".in-numbers",
+      callback: () => import("./pages/home/animate-numbers").then(m => m.animateNumbers('.in-numbers__item-value'))
+    },
+    {
+      selector: ".hero",
+      callback: () => appearanceAnimation([".hero__title", ".hero__button"], ".hero__container")
+    },
+    {
+      selector: ".about",
+      callback: () => appearanceAnimation([".about__title", ".about__text"], ".about__container")
+    }
+  ];
+
+  ScrollTrigger.killAll();
   globalSettings();
   header();
-  appearanceAnimation([".hero__title", ".hero__button"], ".hero__container");
-  appearanceAnimation([".about__title", ".about__text"], ".about__container");
   howWorkSlider();
   reviewsSlider();
   acknowledgmentsSlider();
   mediaAboutUsSlider();
   copyBankDetails();
-  animateNumbers('in-numbers__item-value');
+
+  observeConfigs.forEach(({ selector, callback }) => {
+    observeElements(selector, callback);
+  });
 });
