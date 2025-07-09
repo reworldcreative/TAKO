@@ -267,6 +267,10 @@
     opacity 0.2s ease-in-out,
     scale 0s ease-in-out 0.2s;
 
+  @media (max-width: 350px) {
+    height: calc(100dvh - 120px);
+  }
+
   &::-webkit-scrollbar {
     width: 2px;
     height: 2px;

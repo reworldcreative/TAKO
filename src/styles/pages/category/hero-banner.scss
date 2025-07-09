@@ -11,26 +11,19 @@
     border-radius: 10px;
     aspect-ratio: 1920 / 420;
 
-    @media (max-width: 1440px) {
-      max-height: 720px;
-      aspect-ratio: 1424 / 720;
-    }
-
     @media (max-width: 1024px) {
-      max-height: 532px;
-      aspect-ratio: 1000 / 532;
+      aspect-ratio: 1000 / 420;
     }
 
     @media (max-width: 767px) {
-      max-height: 562px;
-      aspect-ratio: 359 / 562;
+      aspect-ratio: 359 / 420;
     }
   }
 
   &__container {
     position: absolute;
-    left: 181px;
-    bottom: 48px;
+    left: 200px;
+    bottom: 24px;
     max-width: 789px;
 
     @media (max-width: 1440px) {
@@ -40,11 +33,12 @@
 
     @media (max-width: 1023px) {
       max-width: 100%;
-      padding: 0 32px 0 0;
+      padding: 0 24px 0 0;
     }
 
     @media (max-width: 767px) {
-      padding: 0 24px 0 0;
+      left: 16px;
+      padding: 0 16px 0 0;
     }
   }
 
@@ -59,6 +53,7 @@
     }
 
     @media (max-width: 768px) {
+      margin: 0 0 32px 0;
       font-family: 'e-Ukraine', sans-serif;
       font-size: 36px;
       font-weight: 300;
@@ -77,10 +72,17 @@
     font-weight: 300;
     line-height: 1.4;
     letter-spacing: 0.256px;
-    color: $primary-white;
+    color: $gray;
 
     @media (prefers-color-scheme: dark) {
       color: $primary-black;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.2;
+      letter-spacing: 0.224px;
     }
   }
 }
