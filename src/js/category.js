@@ -7,6 +7,7 @@ import { printTextAnimation } from "./components/print-text-animation";
 import { appearanceAnimation } from "./components/appearance-animation";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { observeElements } from "./components/observe-once";
+import { rotateRevealAnimation } from "./components/flip";
 
 document.addEventListener('DOMContentLoaded', () => {
   const observeConfigs = [
@@ -19,7 +20,21 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       selector: ".about",
-      callback: () => appearanceAnimation([".about__title", ".about__text"], ".about__container")
+      callback: () => {
+        appearanceAnimation([".about__title", ".about__text"], ".about__container")
+        printTextAnimation(".about__title", ".about__container")
+      }
+    },
+    {
+      selector: ".other-categories",
+      callback: () => {
+        appearanceAnimation([".other-categories__title"], ".other-categories")
+        rotateRevealAnimation([".other-categories__slide"], ".other-categories")
+      }
+    },
+    {
+      selector: ".how-work",
+      callback: () => appearanceAnimation([".how-work__title"], ".how-work")
     }
   ];
 
@@ -33,4 +48,5 @@ document.addEventListener('DOMContentLoaded', () => {
   observeConfigs.forEach(({ selector, callback }) => {
     observeElements(selector, callback);
   });
+
 });
