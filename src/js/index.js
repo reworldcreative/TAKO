@@ -9,9 +9,17 @@ import { appearanceAnimation } from "./components/appearance-animation";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { observeElements } from "./components/observe-once";
 import { rotateRevealAnimation } from "./components/flip";
+import { scaleRevealAnimation } from "./components/scale";
 
 document.addEventListener('DOMContentLoaded', () => {
   const observeConfigs = [
+    {
+      selector: ".header",
+      callback: () => {
+        appearanceAnimation([".header__products-button", ".header__button-contacts", ".header__button-support", ".header__button-badge"], ".logo", 0.3, 0.1)
+        scaleRevealAnimation([".header__logo", ".navigation__link"], ".logo", 0.5, 0.2)
+      }
+    },
     {
       selector: ".in-numbers",
       callback: () => import("./pages/home/animate-numbers").then(m => {
@@ -64,7 +72,15 @@ document.addEventListener('DOMContentLoaded', () => {
       selector: ".bank-details",
       callback: () => {
         appearanceAnimation([".bank-details__title"], ".bank-details")
-        rotateRevealAnimation([".bank-details__second"], ".bank-details")
+        scaleRevealAnimation([".bank-details__code-wrapper"], ".bank-details")
+      }
+    },
+    {
+      selector: ".footer",
+      callback: () => {
+        appearanceAnimation([".footer__text", ".footer__button-contact"], ".footer")
+        appearanceAnimation([".footer__item"], ".footer", 0.3, 0.1)
+        scaleRevealAnimation([".footer__logo", ".footer__socials-item"], ".footer")
       }
     }
   ];

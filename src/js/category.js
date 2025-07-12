@@ -8,6 +8,7 @@ import { appearanceAnimation } from "./components/appearance-animation";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { observeElements } from "./components/observe-once";
 import { rotateRevealAnimation } from "./components/flip";
+import { initCategorySliders } from "./pages/category/category-item";
 
 document.addEventListener('DOMContentLoaded', () => {
   const observeConfigs = [
@@ -35,6 +36,13 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       selector: ".how-work",
       callback: () => appearanceAnimation([".how-work__title"], ".how-work")
+    },
+    {
+      selector: ".bank-details",
+      callback: () => {
+        appearanceAnimation([".bank-details__title"], ".bank-details")
+        rotateRevealAnimation([".bank-details__second"], ".bank-details")
+      }
     }
   ];
 
@@ -44,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
   howWorkSlider();
   otherCategoriesSlider();
   copyBankDetails();
+  initCategorySliders();
 
   observeConfigs.forEach(({ selector, callback }) => {
     observeElements(selector, callback);
