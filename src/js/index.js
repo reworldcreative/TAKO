@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       selector: ".header",
       callback: () => {
-        appearanceAnimation([".header__products-button", ".header__button-contacts", ".header__button-support", ".header__button-badge"], ".logo", 0.3, 0.1)
-        scaleRevealAnimation([".header__logo", ".navigation__link"], ".logo", 0.5, 0.2)
+        appearanceAnimation([".header__products-button", ".header__button-contacts", ".header__button-support", ".header__button-badge"], ".header", 0.3, 0.1)
+        scaleRevealAnimation([".header__logo", ".navigation__link"], ".header", 0.5, 0.2)
       }
     },
     {

@@ -1,4 +1,70 @@
 <article class='category-item'>
+  <div class="modal category-item__modal">
+    <div class="category-item__modal-content">
+      <button type="button" class="category-item__modal-close" aria-label='close modal'>
+        <svg class="category-item__close-icon">
+          <use xlink:href="#plus"></use>
+        </svg>
+      </button>
+
+      <div class="category-item__modal-swiper swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            {{>modules/picture className="category-item__img" src="/img/products/items/product.jpg"
+            webpSrc="/img/products/items/product.webp"
+            width="429" height="437" alt="product" lazy=true}}
+          </div>
+          <div class="swiper-slide">
+            {{>modules/picture className="category-item__img" src="/img/products/items/product01.jpg"
+            webpSrc="/img/products/items/product01.webp"
+            width="429" height="437" alt="product" lazy=true}}
+          </div>
+          <div class="swiper-slide">
+            <iframe class='category-item__img' width="429" height="437"
+              src="https://www.youtube.com/embed/hScbwX85HYo?si=Y5vqMo-HBwhWQlC6" title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="swiper-slide">
+            {{>modules/picture className="category-item__img" src="/img/products/items/product01.jpg"
+            webpSrc="/img/products/items/product01.webp"
+            width="429" height="437" alt="product" lazy=true}}
+          </div>
+          <div class="swiper-slide">
+            {{>modules/picture className="category-item__img" src="/img/products/items/product01.jpg"
+            webpSrc="/img/products/items/product01.webp"
+            width="429" height="437" alt="product" lazy=true}}
+          </div>
+          <div class="swiper-slide">
+            {{>modules/picture className="category-item__img" src="/img/products/items/product01.jpg"
+            webpSrc="/img/products/items/product01.webp"
+            width="429" height="437" alt="product" lazy=true}}
+          </div>
+        </div>
+
+
+        <button class="category-item__swiper-button category-item__swiper-button-prev" type='button'
+          aria-label='previous slide'>
+          <svg class="category-item__swiper-button-icon">
+            <use xlink:href="#arrow-right"></use>
+          </svg>
+        </button>
+        <button class="category-item__swiper-button category-item__swiper-button-next" type='button'
+          aria-label='next slide'>
+          <svg class="category-item__swiper-button-icon">
+            <use xlink:href="#arrow-right"></use>
+          </svg>
+        </button>
+      </div>
+
+      <div class="category-item__modal-info">
+        <p class='category-item__modal-text'>Пристрій швидкого спорядження набоїв</p>
+
+        <div class='category-item__modal-pagination'> </div>
+      </div>
+    </div>
+  </div>
+
   <div class='category-item__slider'>
     <div class="swiper-container-wrapper">
       <div class="swiper category-item__main-slider">
@@ -14,9 +80,10 @@
             width="429" height="437" alt="product" lazy=true}}
           </div>
           <div class="swiper-slide">
-            {{>modules/picture className="category-item__img" src="/img/products/items/product01.jpg"
-            webpSrc="/img/products/items/product01.webp"
-            width="429" height="437" alt="product" lazy=true}}
+            <iframe class='category-item__img' width="429" height="437"
+              src="https://www.youtube.com/embed/hScbwX85HYo?si=Y5vqMo-HBwhWQlC6" title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
           <div class="swiper-slide">
             {{>modules/picture className="category-item__img" src="/img/products/items/product01.jpg"
@@ -63,9 +130,10 @@
           width="138" height="414037" alt="product" lazy=true}}
         </div>
         <div class="swiper-slide">
-          {{>modules/picture className="category-item__img" src="/img/products/items/product01.jpg"
-          webpSrc="/img/products/items/product01.webp"
-          width="138" height="414037" alt="product" lazy=true}}
+          <iframe class='category-item__img' width="138" height="140"
+            src="https://www.youtube.com/embed/hScbwX85HYo?si=Y5vqMo-HBwhWQlC6" title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
         <div class="swiper-slide">
           {{>modules/picture className="category-item__img" src="/img/products/items/product01.jpg"
@@ -86,68 +154,33 @@
     </div>
   </div>
 
-  <div class="modal category-item__modal">
-    <div class="category-item__modal-content">
-      <button type="button" class="category-item__modal-close" aria-label='close modal'>
-        <svg class="category-item__close-icon">
-          <use xlink:href="#plus"></use>
-        </svg>
-      </button>
+  <div class='category-item__content'>
+    <h2 class='category-item__title'>Пристрій швидкого спорядження набоїв</h2>
 
-      <div class="category-item__modal-swiper swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            {{>modules/picture className="category-item__img" src="/img/products/items/product.jpg"
-            webpSrc="/img/products/items/product.webp"
-            width="429" height="437" alt="product" lazy=true}}
-          </div>
-          <div class="swiper-slide">
-            {{>modules/picture className="category-item__img" src="/img/products/items/product01.jpg"
-            webpSrc="/img/products/items/product01.webp"
-            width="429" height="437" alt="product" lazy=true}}
-          </div>
-          <div class="swiper-slide">
-            {{>modules/picture className="category-item__img" src="/img/products/items/product01.jpg"
-            webpSrc="/img/products/items/product01.webp"
-            width="429" height="437" alt="product" lazy=true}}
-          </div>
-          <div class="swiper-slide">
-            {{>modules/picture className="category-item__img" src="/img/products/items/product01.jpg"
-            webpSrc="/img/products/items/product01.webp"
-            width="429" height="437" alt="product" lazy=true}}
-          </div>
-          <div class="swiper-slide">
-            {{>modules/picture className="category-item__img" src="/img/products/items/product01.jpg"
-            webpSrc="/img/products/items/product01.webp"
-            width="429" height="437" alt="product" lazy=true}}
-          </div>
-          <div class="swiper-slide">
-            {{>modules/picture className="category-item__img" src="/img/products/items/product01.jpg"
-            webpSrc="/img/products/items/product01.webp"
-            width="429" height="437" alt="product" lazy=true}}
-          </div>
-        </div>
+    <ul class='category-item__tags'>
+      <li class='category-item__tag'>AK</li>
+      <li class='category-item__tag'>Калібр— 5,45</li>
+      <li class='category-item__tag'>Калібр — 7,62</li>
+    </ul>
 
+    <div class='category-item__editor'>
+      <p>
+        Портативний та легкий пристрій. Може використовуватись за несприятливих погодних умов (в дощ/сніг, при
+        низькій/високій температурі) 
+      </p>
 
-        <button class="category-item__swiper-button category-item__swiper-button-prev" type='button'
-          aria-label='previous slide'>
-          <svg class="category-item__swiper-button-icon">
-            <use xlink:href="#arrow-right"></use>
-          </svg>
-        </button>
-        <button class="category-item__swiper-button category-item__swiper-button-next" type='button'
-          aria-label='next slide'>
-          <svg class="category-item__swiper-button-icon">
-            <use xlink:href="#arrow-right"></use>
-          </svg>
-        </button>
-      </div>
+      <ol>
+        <li>Всі металеві компоненти – з нержавіючої сталі</li>
+        <li>Механізм кріплення повністю співпадає з оригінальним на зброї</li>
+        <li>Є можливість кріплення до спорядження </li>
+        <li>Повністю сумісний як з армійськими так і з цивільними магазинами різних виробників</li>
+      </ol>
 
-      <div class="category-item__modal-info">
-        <p class='category-item__modal-text'>Пристрій швидкого спорядження набоїв</p>
-
-        <div class='category-item__modal-pagination'> </div>
-      </div>
+      <ul>
+        <li>Зручніше в темряві</li>
+        <li>Швидше споряджання</li>
+        <li>Менше зусиль при заряджанні</li>
+      </ul>
     </div>
   </div>
 </article>

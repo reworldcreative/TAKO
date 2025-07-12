@@ -9,9 +9,17 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { observeElements } from "./components/observe-once";
 import { rotateRevealAnimation } from "./components/flip";
 import { initCategorySliders } from "./pages/category/category-item";
+import { scaleRevealAnimation } from "./components/scale";
 
 document.addEventListener('DOMContentLoaded', () => {
   const observeConfigs = [
+    {
+      selector: ".header",
+      callback: () => {
+        appearanceAnimation([".header__products-button", ".header__button-contacts", ".header__button-support", ".header__button-badge"], ".header", 0.3, 0.1)
+        scaleRevealAnimation([".header__logo", ".navigation__link"], ".header", 0.5, 0.2)
+      }
+    },
     {
       selector: ".hero-banner",
       callback: () => {
@@ -41,7 +49,15 @@ document.addEventListener('DOMContentLoaded', () => {
       selector: ".bank-details",
       callback: () => {
         appearanceAnimation([".bank-details__title"], ".bank-details")
-        rotateRevealAnimation([".bank-details__second"], ".bank-details")
+        scaleRevealAnimation([".bank-details__code-wrapper"], ".bank-details")
+      }
+    },
+    {
+      selector: ".footer",
+      callback: () => {
+        appearanceAnimation([".footer__text", ".footer__button-contact"], ".footer")
+        appearanceAnimation([".footer__item"], ".footer", 0.3, 0.1)
+        scaleRevealAnimation([".footer__logo", ".footer__socials-item"], ".footer")
       }
     }
   ];

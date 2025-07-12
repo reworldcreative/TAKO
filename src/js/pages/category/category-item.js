@@ -5,10 +5,13 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 import 'swiper/css/free-mode';
+import { gsap } from "gsap";
+
 
 export function initCategorySliders() {
   const modal = document.querySelector('.category-item__modal');
   const modalClose = document.querySelector('.category-item__modal-close');
+  const modalContainer = document.querySelector('.category-item__modal-content');
 
   const thumbsSwiper = new Swiper(".category-item__thumbnail-slider", {
     loop: true,
@@ -37,6 +40,15 @@ export function initCategorySliders() {
         if (clickedIndex !== undefined) {
           modal.classList.add('show');
           modalSwiper?.slideToLoop(swiper.realIndex);
+          gsap.fromTo(modalContainer,
+            { opacity: 0, scale: 0.5 },
+            {
+              opacity: 1,
+              scale: 1,
+              duration: 0.5,
+              ease: "back.out(1.7)"
+            }
+          );
           disablePageScroll();
         }
       }
@@ -62,13 +74,26 @@ export function initCategorySliders() {
     }
   });
 
+  function closeModalAnimation() {
+    gsap.to(modalContainer, {
+      opacity: 0,
+      scale: 0.5,
+      duration: 0.3,
+      ease: "power2.in",
+      onComplete: () => {
+        modal.classList.remove('show');
+      }
+    });
+  }
+
   modalClose.addEventListener('click', () => {
-    modal.classList.remove('show');
+    closeModalAnimation();
+    enablePageScroll();
   });
 
   modal?.addEventListener('click', function (event) {
     if (event.target === modal) {
-      modal.classList.remove('show');
+      closeModalAnimation();
       enablePageScroll();
     }
   });
