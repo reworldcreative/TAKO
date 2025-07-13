@@ -161,9 +161,11 @@
 
   &__swiper-pagination {
     position: relative !important;
+    overflow: hidden;
     height: 7px !important;
     bottom: 7px;
     top: auto !important;
+    border-radius: 6px;
 
     @media (max-width: 1023px) {
       max-width: 272px;

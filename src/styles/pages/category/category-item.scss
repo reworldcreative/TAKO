@@ -5,6 +5,26 @@
   border-radius: 16px;
   background: $gray;
 
+  @media (max-width: 1200px) {
+    grid-template-columns: minmax(200px, 330px) 1fr;
+  }
+
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 100%;
+  }
+
+  &__slider {
+    @media (max-width: 1024px) {
+      width: 100%;
+      justify-content: center;
+      display: flex;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {}
+  }
+
   .swiper-container-wrapper {
     overflow: hidden;
     margin: 0 0 8px;
@@ -12,6 +32,14 @@
     border-radius: 8px;
     border: 1px solid $light-gray;
     aspect-ratio: 429 / 437;
+
+    @media (max-width: 1024px) {
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      aspect-ratio: 311 / 340;
+    }
   }
 
   .swiper-slide {
@@ -21,16 +49,25 @@
   &__thumbnail-slider {
     position: relative;
 
-    .category-item__img {
+    @media (max-width: 1023px) {
+      display: none !important;
+    }
+
+    .swiper-slide {
       border-radius: 8px;
       border: 1px solid $light-gray;
+    }
+
+    .category-item__img {
       aspect-ratio: 138 / 140;
     }
 
     .swiper-slide {
       &.blur {
-        filter: blur(2px);
-        transition: filter 0.3s ease;
+        .category-item__img {
+          filter: blur(2px);
+          transition: filter 0.3s ease;
+        }
       }
     }
   }
@@ -39,6 +76,26 @@
     width: 100%;
     height: 100%;
     max-height: inherit;
+  }
+
+  &__main-slider-pagination {
+    position: relative !important;
+    overflow: hidden;
+    display: none;
+    width: 95% !important;
+    height: 7px !important;
+    bottom: 16px;
+    top: auto !important;
+    margin: 0 auto;
+    border-radius: 6px;
+
+    .swiper-pagination-progressbar-fill {
+      background: $primary-blue !important;
+    }
+
+    @media (max-width: 1023px) {
+      display: block;
+    }
   }
 
   &__img {
@@ -123,6 +180,7 @@
   }
 
   &__slides-badge {
+    pointer-events: none;
     position: absolute;
     z-index: 1;
     display: none;
@@ -138,6 +196,11 @@
     font-size: 14px;
     font-weight: 700;
     line-height: 1.2;
+    transition: opacity 0.2s ease-in-out;
+
+    @media (max-width: 1023px) {
+      padding: 10px 15px;
+    }
   }
 
   &__modal {
@@ -163,11 +226,25 @@
     border-radius: 8px;
     border: 1px solid $light-gray;
     background: $gray;
+
+    @media (max-width: 1200px) {
+      grid-auto-rows: max-content;
+      width: 90vw;
+      height: auto;
+      max-height: fit-content;
+    }
   }
 
-  &__modal-swiper {
+  &__modal-slider {
     width: 100%;
-    height: 100%
+    height: 100%;
+
+    .category-item__img {
+      @media (max-width: 1200px) {
+        aspect-ratio: 300 / 170;
+        height: 300px;
+      }
+    }
   }
 
   &__modal-close {
@@ -210,6 +287,17 @@
     font-weight: 300;
     line-height: 1.2;
     letter-spacing: 0.36px;
+
+    @media (max-width: 1024px) {
+      font-size: 20px;
+      letter-spacing: 0.32px;
+    }
+
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+      font-size: 18px;
+      letter-spacing: 0.288px;
+    }
   }
 
   &__modal-text {
@@ -219,17 +307,26 @@
   &__modal-pagination {
     width: fit-content !important;
 
+    @media (max-width: 1024px) {
+      justify-content: center;
+      display: flex;
+      margin: 0 0 0 auto;
+    }
+
     span {
       font-weight: 300;
     }
   }
 
   &__content {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: repeat(4, max-content) 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 16px;
     margin: 40px 32px 24px;
+
+    @media (max-width: 768px) {
+      margin: 24px 0;
+    }
   }
 
   &__title {
@@ -238,12 +335,22 @@
     font-weight: 300;
     line-height: 1.2;
     letter-spacing: 0.392px;
+
+    @media (max-width: 768px) {
+      margin: 0 16px;
+      font-size: 20px;
+      letter-spacing: 0.32px;
+    }
   }
 
   &__tags {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+      margin: 0 16px;
+    }
   }
 
 
@@ -257,11 +364,19 @@
     padding: 12px;
     color: $links-gray;
 
+    @media (max-width: 1024px) {
+      padding: 13px 8px;
+    }
+
     &_main {
       padding: 12px 24px;
       color: $primary-blue;
       border: 1px solid $primary-blue;
       background: none;
+
+      @media (max-width: 1024px) {
+        padding: 8px 16px;
+      }
     }
   }
 
@@ -278,6 +393,13 @@
     -webkit-line-clamp: 10;
     line-clamp: 10;
     -webkit-box-orient: vertical;
+
+
+    @media (max-width: 1024px) {
+      font-size: 14px;
+      line-height: 1.2;
+      letter-spacing: 0.224px;
+    }
 
     &:first-child {
       margin: 0;
@@ -332,9 +454,17 @@
     &.visible {
       display: block;
     }
+
+    @media (max-width: 1024px) {
+      font-size: 14px;
+    }
   }
 
   &__description {
+    @media (max-width: 768px) {
+      margin: 0 16px;
+    }
+
     &.show {
       .category-item__editor {
         -webkit-line-clamp: 30;
@@ -353,21 +483,39 @@
     padding: 15px 16px;
     margin: auto 0 0;
     background: $primary-white;
+
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+      gap: 24px;
+      margin: 16px 0 0;
+    }
   }
 
   &__price {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 16px;
     width: 100%;
+    padding: 0 16px 0 0;
     border-right: 1px solid $light-gray;
+
+    @media (max-width: 1024px) {
+      border-right: none;
+      padding: 0;
+    }
 
     &_accent {
       font-size: 24px;
       font-weight: 300;
       line-height: 1.2;
       letter-spacing: 0.36px;
+
+      @media (max-width: 768px) {
+        font-size: 20px;
+        letter-spacing: 0.32px;
+      }
     }
   }
 
@@ -378,6 +526,10 @@
     font-size: 14px;
     font-weight: 700;
     line-height: 1.2;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
 
     .button-icon {
       display: flex;
@@ -394,7 +546,11 @@
   &__amount,
   &__price-per-unit {
     text-align: center;
-    flex: 1 1 50%;
+    flex: 1 1 48%;
+
+    @media (max-width: 768px) {
+      flex: 1 1 auto;
+    }
   }
 
   &__text {
@@ -404,8 +560,22 @@
     line-height: 1.2;
     letter-spacing: 0.224px;
 
+    @media (max-width: 768px) {
+      font-size: 12px;
+      letter-spacing: 0.192px;
+    }
+
     &_accent {
       color: $primary-text;
+
+      span {
+        &:nth-child(2) {
+          @media (max-width: 768px) {
+            font-size: 14px;
+            letter-spacing: 0.224px;
+          }
+        }
+      }
     }
   }
 }

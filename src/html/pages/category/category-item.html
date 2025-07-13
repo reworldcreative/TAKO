@@ -7,7 +7,7 @@
         </svg>
       </button>
 
-      <div class="category-item__modal-swiper swiper">
+      <div class="category-item__modal-slider swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             {{>modules/picture className="category-item__img" src="/img/products/items/product.jpg"
@@ -114,7 +114,6 @@
           </div>
         </div>
 
-
         <button class="category-item__swiper-button category-item__swiper-button-prev" type='button'
           aria-label='previous slide'>
           <svg class="category-item__swiper-button-icon">
@@ -127,6 +126,8 @@
             <use xlink:href="#arrow-right"></use>
           </svg>
         </button>
+
+        <div class='swiper-pagination category-item__main-slider-pagination'></div>
       </div>
     </div>
 

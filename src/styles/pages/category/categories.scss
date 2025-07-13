@@ -78,5 +78,9 @@
     grid-template-columns: 100%;
     gap: 64px;
     margin: 24px 0 0;
+
+    @media (max-width: 1024px) {
+      gap: 24px;
+    }
   }
 }
