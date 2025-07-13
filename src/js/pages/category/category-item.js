@@ -30,8 +30,16 @@ export function initCategorySliders() {
         watchSlidesProgress: true,
         modules: [FreeMode],
         on: {
-          init() {
-            // твій код для лічильника і updateBlur
+          init: function () {
+            const counterContainer = thumbnailSliderEl.querySelector('.category-item__slides-badge');
+            const slidesInView = this.params.slidesPerView;
+            const counter = this.slides.length - slidesInView;
+
+            if (this.slides.length <= slidesInView) return;
+
+            counterContainer.textContent = "+" + counter;
+            counterContainer.style.display = 'flex';
+            updateBlur(this);
           },
           slideChange() {
             updateBlur(this);
@@ -51,7 +59,7 @@ export function initCategorySliders() {
     }
 
     function checkThumbsSwiper() {
-      if (window.innerWidth <= 1024) {
+      if (window.innerWidth <= 767) {
         if (thumbsSwiper) {
           thumbsSwiper.destroy(true, true);
           thumbsSwiper = null;
