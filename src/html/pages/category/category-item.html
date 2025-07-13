@@ -20,10 +20,16 @@
             width="429" height="437" alt="product" lazy=true}}
           </div>
           <div class="swiper-slide">
-            <iframe class='category-item__img' width="429" height="437"
-              src="https://www.youtube.com/embed/hScbwX85HYo?si=Y5vqMo-HBwhWQlC6" title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class='video-container category-item__img' data-video='hScbwX85HYo' data-width="429" data-height="437">
+              <img class='category-item__img' src="https://img.youtube.com/vi/hScbwX85HYo/hqdefault.jpg" width="429"
+                height="437" alt="Preview">
+
+              <div class='play-button'>
+                <svg class="play-button__icon">
+                  <use xlink:href="#play"></use>
+                </svg>
+              </div>
+            </div>
           </div>
           <div class="swiper-slide">
             {{>modules/picture className="category-item__img" src="/img/products/items/product01.jpg"
@@ -80,10 +86,16 @@
             width="429" height="437" alt="product" lazy=true}}
           </div>
           <div class="swiper-slide">
-            <iframe class='category-item__img' width="429" height="437"
-              src="https://www.youtube.com/embed/hScbwX85HYo?si=Y5vqMo-HBwhWQlC6" title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class='category-item__img'>
+              <img class='category-item__img' src="https://img.youtube.com/vi/hScbwX85HYo/hqdefault.jpg" width="429"
+                height="437" alt="Preview">
+
+              <div class='play-button'>
+                <svg class="play-button__icon">
+                  <use xlink:href="#play"></use>
+                </svg>
+              </div>
+            </div>
           </div>
           <div class="swiper-slide">
             {{>modules/picture className="category-item__img" src="/img/products/items/product01.jpg"
@@ -117,6 +129,7 @@
         </button>
       </div>
     </div>
+
     <div class="swiper category-item__thumbnail-slider">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
@@ -130,10 +143,13 @@
           width="138" height="414037" alt="product" lazy=true}}
         </div>
         <div class="swiper-slide">
-          <iframe class='category-item__img' width="138" height="140"
-            src="https://www.youtube.com/embed/hScbwX85HYo?si=Y5vqMo-HBwhWQlC6" title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <img class='category-item__img' src="https://img.youtube.com/vi/hScbwX85HYo/hqdefault.jpg" alt="Preview">
+
+          <div class='play-button'>
+            <svg class="play-button__icon">
+              <use xlink:href="#play"></use>
+            </svg>
+          </div>
         </div>
         <div class="swiper-slide">
           {{>modules/picture className="category-item__img" src="/img/products/items/product01.jpg"
@@ -151,6 +167,8 @@
           width="138" height="414037" alt="product" lazy=true}}
         </div>
       </div>
+
+      <div class='category-item__slides-badge'>+31</div>
     </div>
   </div>
 
@@ -158,29 +176,59 @@
     <h2 class='category-item__title'>Пристрій швидкого спорядження набоїв</h2>
 
     <ul class='category-item__tags'>
-      <li class='category-item__tag'>AK</li>
-      <li class='category-item__tag'>Калібр— 5,45</li>
-      <li class='category-item__tag'>Калібр — 7,62</li>
+      <li class='category-item__tag category-item__tag_main'>AK</li>
+      <li class='category-item__tag category-item__tag_main'>Калібр— 5,45</li>
+      <li class='category-item__tag category-item__tag_main'>Калібр — 7,62</li>
     </ul>
 
-    <div class='category-item__editor'>
-      <p>
-        Портативний та легкий пристрій. Може використовуватись за несприятливих погодних умов (в дощ/сніг, при
-        низькій/високій температурі) 
-      </p>
+    <div class='category-item__description'>
+      <div class='category-item__editor'>
+        <p>
+          Портативний та легкий пристрій. Може використовуватись за несприятливих погодних умов (в дощ/сніг, при
+          низькій/високій температурі) 
+        </p>
 
-      <ol>
-        <li>Всі металеві компоненти – з нержавіючої сталі</li>
-        <li>Механізм кріплення повністю співпадає з оригінальним на зброї</li>
-        <li>Є можливість кріплення до спорядження </li>
-        <li>Повністю сумісний як з армійськими так і з цивільними магазинами різних виробників</li>
-      </ol>
+        <ol>
+          <li>Всі металеві компоненти – з нержавіючої сталі</li>
+          <li>Механізм кріплення повністю співпадає з оригінальним на зброї</li>
+          <li>Є можливість кріплення до спорядження </li>
+          <li>Повністю сумісний як з армійськими так і з цивільними магазинами різних виробників</li>
+        </ol>
+      </div>
 
-      <ul>
-        <li>Зручніше в темряві</li>
-        <li>Швидше споряджання</li>
-        <li>Менше зусиль при заряджанні</li>
-      </ul>
+      <button class='category-item__more' type='button'>Більше</button>
+    </div>
+
+    <ul class='category-item__tags'>
+      <li class='category-item__tag'>Зручніше в темряві</li>
+      <li class='category-item__tag'>Швидше споряджання</li>
+      <li class='category-item__tag'>Менше зусиль при заряджанні</li>
+    </ul>
+
+    <div class='category-item__bottom'>
+      <div class='category-item__price'>
+        <div class='category-item__amount'>
+          <p class='category-item__text category-item__text_accent'>
+            <span class='category-item__price_accent'>1 345</span> <span>одиниць</span>
+          </p>
+          <p class='category-item__text'>передано</p>
+        </div>
+
+        <div class='category-item__price-per-unit'>
+          <p class='category-item__text category-item__text_accent'>
+            <span class='category-item__price_accent'>10,00</span> <span>грн</span>
+          </p>
+          <p class='category-item__text'>собівартість за од.</p>
+        </div>
+      </div>
+
+      <button class='button category-item__buy-button' type='button'>
+        <span class='button-text'>Замовити</span>
+
+        <svg class="button-icon">
+          <use xlink:href="#plus"></use>
+        </svg>
+      </button>
     </div>
   </div>
 </article>

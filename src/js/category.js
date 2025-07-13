@@ -8,7 +8,7 @@ import { appearanceAnimation } from "./components/appearance-animation";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { observeElements } from "./components/observe-once";
 import { rotateRevealAnimation } from "./components/flip";
-import { initCategorySliders } from "./pages/category/category-item";
+import { initCategorySliders, moreDescription } from "./pages/category/category-item";
 import { scaleRevealAnimation } from "./components/scale";
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -69,6 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
   otherCategoriesSlider();
   copyBankDetails();
   initCategorySliders();
+  moreDescription();
 
   observeConfigs.forEach(({ selector, callback }) => {
     observeElements(selector, callback);

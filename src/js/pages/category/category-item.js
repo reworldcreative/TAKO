@@ -12,14 +12,99 @@ export function initCategorySliders() {
   const modal = document.querySelector('.category-item__modal');
   const modalClose = document.querySelector('.category-item__modal-close');
   const modalContainer = document.querySelector('.category-item__modal-content');
+  let players = {};
+
+  function setupVideoClick() {
+    const videos = document.querySelectorAll('.video-container');
+
+    videos.forEach(video => {
+      video.addEventListener('click', function () {
+        const videoId = this.dataset.video;
+        const width = this.dataset.width || 560;
+        const height = this.dataset.height || 315;
+
+        const iframe = document.createElement('iframe');
+        iframe.width = width;
+        iframe.height = height;
+        iframe.className = this.className;
+        iframe.src = `https://www.youtube.com/embed/${videoId}?enablejsapi=1`;
+        iframe.allow = 'autoplay; encrypted-media';
+        iframe.allowFullscreen = true;
+
+        iframe.id = `youtube-player-${Math.floor(Math.random() * 10000)}`;
+
+        this.replaceWith(iframe);
+        players[iframe.id] = new YT.Player(iframe.id, {
+          events: {
+            onReady: (event) => {
+              event.target.playVideo();
+            }
+          }
+        });
+      });
+    });
+  }
+
+  function pauseAllVideos() {
+    Object.values(players).forEach(player => {
+      if (player.pauseVideo) {
+        player.pauseVideo();
+      }
+    });
+  }
+
+  function updateBlur(swiper) {
+    swiper.slides.forEach(slide => slide.classList.remove('blur'));
+
+    const firstVisibleIndex = swiper.activeIndex;
+    const slidesPerView = swiper.params.slidesPerView;
+
+    let lastVisibleIndex = firstVisibleIndex + slidesPerView - 1;
+
+    if (lastVisibleIndex >= swiper.slides.length) {
+      lastVisibleIndex = swiper.slides.length - 1;
+    }
+
+    swiper.slides[lastVisibleIndex].classList.add('blur');
+  }
+
+  function stopAllVideos(swiperInstance) {
+    swiperInstance.slides.forEach(slide => {
+      const videos = slide.querySelectorAll('video');
+      videos.forEach(video => {
+        video.pause();
+        video.currentTime = 0;
+      });
+    });
+  }
 
   const thumbsSwiper = new Swiper(".category-item__thumbnail-slider", {
     loop: true,
     spaceBetween: 8,
     slidesPerView: 3,
-    freeMode: true,
     watchSlidesProgress: true,
     modules: [FreeMode],
+
+    on: {
+      init: function () {
+        const counterContainer = document.querySelector('.category-item__slides-badge');
+        const slidesInView = this.params.slidesPerView;
+        const counter = this.slides.length - slidesInView;
+
+        if (this.slides.length <= slidesInView) return;
+
+        counterContainer.textContent = "+" + counter;
+        counterContainer.style.display = 'flex';
+        updateBlur(this);
+      },
+      slideChange: function () {
+        updateBlur(this);
+        stopAllVideos(this);
+      },
+      resize: function () {
+        updateBlur(this);
+      }
+    }
   });
 
   const mainSwiper = new Swiper(".category-item__main-slider", {
@@ -51,6 +136,9 @@ export function initCategorySliders() {
           );
           disablePageScroll();
         }
+      },
+      slideChange: () => {
+        pauseAllVideos();
       }
     }
   });
@@ -81,6 +169,7 @@ export function initCategorySliders() {
       duration: 0.3,
       ease: "power2.in",
       onComplete: () => {
+        pauseAllVideos();
         modal.classList.remove('show');
       }
     });
@@ -96,5 +185,39 @@ export function initCategorySliders() {
       closeModalAnimation();
       enablePageScroll();
     }
+  });
+
+  setupVideoClick();
+}
+
+function getFullLineCount(element) {
+  const style = window.getComputedStyle(element);
+  const lineHeight = parseFloat(style.lineHeight);
+  const fullHeight = element.scrollHeight;
+
+  return Math.round(fullHeight / lineHeight);
+}
+
+export function moreDescription() {
+  const moreDescriptionButtons = document.querySelectorAll('.category-item__more');
+
+  moreDescriptionButtons.forEach(button => {
+    const container = button.closest('.category-item__description');
+    const editor = container.querySelector('.category-item__editor')
+    const editorLineCount = window.getComputedStyle(editor).getPropertyValue('-webkit-line-clamp');
+
+    if (getFullLineCount(editor) > editorLineCount) {
+      button.classList.add('visible');
+    }
+
+    button.addEventListener('click', () => {
+      container.classList.toggle('show');
+
+      if (container.classList.contains('show')) {
+        button.textContent = 'Менше';
+      } else {
+        button.textContent = 'Більше';
+      }
+    });
   });
 }
