@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "title": "Пристрій швидкого спорядження набоїв",
+    "description": "<p>Портативний та легкий пристрій. Може використовуватись за несприятливих погодних умов (в дощ/сніг, при низькій/високій температурі)</p><ol><li>Всі металеві компоненти – з нержавіючої сталі</li><li>Механізм кріплення повністю співпадає з оригінальним на зброї</li><li>Є можливість кріплення до спорядження</li><li>Повністю сумісний як з армійськими так і з цивільними магазинами різних виробників</li></ol>",
+    "tags_in_category": ["AK", "Калібр— 5,45", "Калібр — 7,62", "Вага — 56 гр"],
+    "tags": ["Зручніше в темряві", "Швидше споряджання", "Менше зусиль при заряджанні", "Зручніше на морозі"],
+    "price_per_unit": 10.0,
+    "transferred_amount": 1345,
+    "images": [
+      {
+        "type": "image",
+        "url": "img/products/items/product.jpg",
+        "webp_url": "img/products/items/product.webp",
+        "alt": "product"
+      },
+      {
+        "type": "image",
+        "url": "img/products/items/product01.jpg",
+        "webp_url": "img/products/items/product01.webp",
+        "alt": "product"
+      },
+      {
+        "type": "video",
+        "video_id": "hScbwX85HYo"
+      },
+      {
+        "type": "image",
+        "url": "img/products/items/product01.jpg",
+        "webp_url": "img/products/items/product01.webp",
+        "alt": "product"
+      }
+    ]
+  }
+]
