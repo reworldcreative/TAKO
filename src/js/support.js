@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ];
 
-
   globalSettings();
   header();
   copyBankDetails();

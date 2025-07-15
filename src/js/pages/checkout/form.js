@@ -1,19 +1,9 @@
 import { createDropdown, input, search } from "@/js/components/input";
 import { disablePageScroll } from '@fluejs/noscroll';
 import JustValidate from 'just-validate';
+import { getData } from "@/js/components/get-data";
 
 const base = import.meta.env.BASE_URL || '/';
-
-async function getData(url) {
-  try {
-    const response = await fetch(url);
-    const items = await response.json();
-    return items;
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
-}
 
 function checkboxDelivery() {
   const radios = document.querySelectorAll('input[name="convenient-communication-method"]');

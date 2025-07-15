@@ -83,4 +83,33 @@
       gap: 24px;
     }
   }
+
+  .empty-block {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 32px 0;
+
+    &__text {
+      color: $primary-text;
+      text-align: center;
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 1.4;
+      letter-spacing: 0.32px;
+    }
+  }
+
+  &__container {
+    &.empty {
+      .empty-block {
+        display: flex;
+      }
+
+      .categories__list {
+        display: none;
+      }
+    }
+  }
 }

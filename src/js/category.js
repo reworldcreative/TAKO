@@ -2,14 +2,15 @@ import { header } from "@/js/components/header";
 import { howWorkSlider } from "@/js/pages/home/how-work";
 import { globalSettings } from "@/js/utils/global";
 import { copyBankDetails } from "@/js/pages/home/bank-details";
-import { otherCategoriesSlider } from "./pages/category/other-categories";
-import { printTextAnimation } from "./components/print-text-animation";
-import { appearanceAnimation } from "./components/appearance-animation";
+import { otherCategoriesSlider } from "@/js/pages/category/other-categories";
+import { printTextAnimation } from "@/js/components/print-text-animation";
+import { appearanceAnimation } from "@/js/components/appearance-animation";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { observeElements } from "./components/observe-once";
-import { rotateRevealAnimation } from "./components/flip";
-import { initCategorySliders, moreDescription } from "./pages/category/category-item";
-import { scaleRevealAnimation } from "./components/scale";
+import { observeElements } from "@/js/components/observe-once";
+import { rotateRevealAnimation } from "@/js/components/flip";
+import { initCategorySliders, moreDescription } from "@/js/pages/category/category-item";
+import { scaleRevealAnimation } from "@/js/components/scale";
+import { categoryList } from "@/js/pages/category/categories";
 
 document.addEventListener('DOMContentLoaded', () => {
   const observeConfigs = [
@@ -68,8 +69,12 @@ document.addEventListener('DOMContentLoaded', () => {
   howWorkSlider();
   otherCategoriesSlider();
   copyBankDetails();
-  initCategorySliders();
-  moreDescription();
+  categoryList();
+
+  // document.querySelectorAll('.category-item').forEach(item => {
+  //   initCategorySliders(item);
+  //   moreDescription(item);
+  // });
 
   observeConfigs.forEach(({ selector, callback }) => {
     observeElements(selector, callback);
