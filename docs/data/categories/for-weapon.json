@@ -4,7 +4,7 @@
     "title": "Пристрій швидкого спорядження набоїв",
     "description": "<p>Портативний та легкий пристрій. Може використовуватись за несприятливих погодних умов (в дощ/сніг, при низькій/високій температурі)</p><ol><li>Всі металеві компоненти – з нержавіючої сталі</li><li>Механізм кріплення повністю співпадає з оригінальним на зброї</li><li>Є можливість кріплення до спорядження</li><li>Повністю сумісний як з армійськими так і з цивільними магазинами різних виробників</li></ol>",
     "tags_in_category": ["AK", "Калібр— 5,45", "Калібр — 7,62", "Вага — 56 гр"],
-    "tags": ["Зручніше в темряві", "Швидше споряджання", "Менше зусиль при заряджанні", "Зручніше на морозі"],
+    "tags": ["more-comfortable-in-dark", "quick-equipment", "less-effort-when-charging", "more-comfortable-in-cold"],
     "price_per_unit": 10.0,
     "transferred_amount": 1345,
     "images": [
@@ -28,6 +28,61 @@
         "type": "image",
         "url": "img/products/items/product01.jpg",
         "webp_url": "img/products/items/product01.webp",
+        "alt": "product"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Тактичне підсвічування нічного бачення",
+    "description": "<p>Потужне підсвічування для точного прицілювання в умовах низької освітленості. Сумісне з більшістю шоломів та спорядження.</p><ol><li>ІЧ-режим для нічного бачення</li><li>Регульований кут світла</li><li>Пило- та вологозахист</li></ol>",
+    "tags_in_category": ["Універсальне", "Вага — 90 гр", "Сумісне з NVG"],
+    "tags": ["more-comfortable-in-the-dark", "protection-against-dust-and-dirt"],
+    "price_per_unit": 18.0,
+    "transferred_amount": 560,
+    "images": [
+      {
+        "type": "image",
+        "url": "img/products/items/product2.jpg",
+        "webp_url": "img/products/items/product2.webp",
+        "alt": "product"
+      },
+      {
+        "type": "image",
+        "url": "img/products/items/product02.jpg",
+        "webp_url": "img/products/items/product02.webp",
+        "alt": "product"
+      },
+      {
+        "type": "video",
+        "video_id": "hScbwX85HYo"
+      },
+      {
+        "type": "image",
+        "url": "img/products/items/product02.jpg",
+        "webp_url": "img/products/items/product02.webp",
+        "alt": "product"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Пластина захисту від пилу та бруду",
+    "description": "<p>Розроблена для запобігання потраплянню пилу, піску та бруду до механізмів зброї. Ідеально підходить для використання в польових умовах.</p><ul><li>Полікарбонатне покриття</li><li>Стійка до подряпин</li><li>Легка установка без додаткових інструментів</li></ul>",
+    "tags_in_category": [
+      "Матеріал — Полікарбонат",
+      "Температурна стійкість — до -40°C",
+      "Тип — Захисний елемент",
+      "Вага — 42 гр"
+    ],
+    "tags": ["protection-against-dust-and-dirt"],
+    "price_per_unit": 6.5,
+    "transferred_amount": 820,
+    "images": [
+      {
+        "type": "image",
+        "url": "img/products/items/product02.jpg",
+        "webp_url": "img/products/items/product02.webp",
         "alt": "product"
       }
     ]
