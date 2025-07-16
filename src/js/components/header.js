@@ -9,7 +9,21 @@ export function header() {
   const productsButton = document.querySelector('.header__products-button')
   const productsMenu = document.querySelector('.header__products')
   const modalBG = document.querySelector('.modal__bg')
+  const badgeButton = document.querySelector('.header__button-badge ')
+  const badge = badgeButton.querySelector('.button-badge')
 
+  function updateBadgeUI() {
+    const products = JSON.parse(localStorage.getItem('checkoutProducts')) || [];
+    const badgeNumber = badge.querySelector('.button-badge__number');
+    const count = products.length;
+
+    badgeNumber.textContent = count > 0 ? (count > 9 ? '9' : count) : '';
+    badge.classList.toggle('more', count > 9);
+    badge.classList.toggle('empty', count === 0);
+  }
+
+  window.addEventListener('checkoutProductsUpdated', updateBadgeUI);
+  updateBadgeUI();
 
   burgerMenuButton.addEventListener('click', () => {
     header.classList.toggle('open-burger')

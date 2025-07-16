@@ -584,4 +584,19 @@
       }
     }
   }
+
+  &.added {
+    .category-item {
+      &__buy-button {
+        pointer-events: none;
+        background: $border;
+        color: $links-gray;
+        border: 1px solid $border;
+
+        .button-icon {
+          display: none;
+        }
+      }
+    }
+  }
 }

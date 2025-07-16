@@ -1,15 +1,22 @@
 import { initCategorySliders, moreDescription } from "@/js/pages/category/category-item";
 import { tagTranslations } from "@/js/utils/data/categories-translate";
+import { addToCart } from "./add-to-cart";
 
 const currentLang = "ua";
 
 export function renderCategoryItems(items) {
+  const products = JSON.parse(localStorage.getItem('checkoutProducts')) || [];
   let itemsArray = [];
 
   items.forEach(item => {
     const categoryItem = document.createElement('article');
-    categoryItem.classList.add('category-item');
+    const isProductInCart = products.find(
+      (el) => String(el.id) === String(item.id) && el.category === item.category
+    );
+
+    categoryItem.classList.add(...['category-item', isProductInCart ? 'added' : null].filter(Boolean));
     categoryItem.setAttribute('data-id', item.id);
+    categoryItem.setAttribute('data-category', item.category);
 
     categoryItem.innerHTML = `
     <div class="modal category-item__modal">
@@ -197,7 +204,7 @@ export function renderCategoryItems(items) {
       </div>
 
       <button class='button category-item__buy-button' type='button'>
-        <span class='button-text'>Замовити</span>
+        <span class='button-text'>${isProductInCart ? 'В кошику' : 'Замовити'}</span>
 
         <svg class="button-icon">
           <use xlink:href="#plus"></use>
@@ -208,6 +215,7 @@ export function renderCategoryItems(items) {
   `
     initCategorySliders(categoryItem);
     moreDescription(categoryItem);
+    addToCart(categoryItem);
     itemsArray.push(categoryItem);
   })
 

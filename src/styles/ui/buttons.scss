@@ -72,6 +72,7 @@
   &-badge {
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 20px;
     height: 20px;
     color: $primary-white;
@@ -89,9 +90,20 @@
     }
 
     &__plus {
+      display: none;
       font-size: 8px;
       line-height: 120%;
       letter-spacing: 0.112px;
+    }
+
+    &.more {
+      .button-badge__plus {
+        display: flex;
+      }
+    }
+
+    &.empty {
+      display: none;
     }
   }
 

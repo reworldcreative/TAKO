@@ -273,6 +273,7 @@ export async function form() {
       const successForm = document.querySelector('.checkout-success');
       successForm.classList.add('show');
       disablePageScroll();
+      localStorage.setItem('checkoutProducts', '');
 
       // try {
       //   const response = await fetch('/your-endpoint-url', {
