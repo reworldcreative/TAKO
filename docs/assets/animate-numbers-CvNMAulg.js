@@ -1,0 +1,1 @@
+import{f as o,S as r}from"./scale-n68OfTc5.js";function g(a){o.registerPlugin(r);const n=t=>t.toLocaleString("uk-UA");document.querySelectorAll(a).forEach(t=>{const l=+t.dataset.target,e={val:0};r.create({trigger:t,start:"top 90%",once:!0,onEnter:()=>{o.to(e,{val:l,duration:1.5,ease:"power1.out",onUpdate:()=>{t.textContent=n(Math.floor(e.val))}})}})})}export{g as animateNumbers};

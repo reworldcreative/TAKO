@@ -14,7 +14,9 @@ export function products() {
     productsList.appendChild(createElement(product));
   });
 
-  productCard(productsList);
+  productsList.forEach(product => {
+    productCard(product);
+  });
 
   const updateTotal = () => {
     const products = productsList.querySelectorAll('.product-card');
