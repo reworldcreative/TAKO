@@ -14,8 +14,24 @@ const pages = [
     path: resolve(__dirname, './support.html'),
   },
   {
-    name: 'category',
-    path: resolve(__dirname, './category.html'),
+    name: 'category-for-weapon',
+    path: resolve(__dirname, './category-for-weapon.html'),
+  },
+  {
+    name: 'category-medicine',
+    path: resolve(__dirname, './category-medicine.html'),
+  },
+  {
+    name: 'category-walkie-talkie',
+    path: resolve(__dirname, './category-walkie-talkie.html'),
+  },
+  {
+    name: 'category-reb',
+    path: resolve(__dirname, './category-reb.html'),
+  },
+  {
+    name: 'category-drones',
+    path: resolve(__dirname, './category-drones.html'),
   },
 ]
 

@@ -1,21 +1,31 @@
 import { observeProductRemoval } from "@/js/components/remove-product";
 import { createElement } from "./create-element";
-import { productCard } from "./product-card";
+import { getData } from "@/js/components/get-data";
 
-export function products() {
+const base = import.meta.env.BASE_URL || '/';
+
+export async function products() {
+  const serverData = await getData(`${base}data/categories/for-weapon.json`);
   const data = JSON.parse(localStorage.getItem('checkoutProducts'));
+
+  const items = serverData
+    .filter(item => data.some(el => String(el.id) === String(item.id) && String(el.category) === String(item.category)))
+    .map(item => {
+      const matched = data.find(el => String(el.id) === String(item.id) && String(el.category) === String(item.category));
+      return {
+        ...item,
+        image: matched.image,
+        quantity: matched.quantity,
+      };
+    });
 
   const productsList = document.querySelector('.checkout-form__products');
   const preorderBlock = document.querySelector('.checkout-form__preorder');
   const preorderBlockMobile = document.querySelector('.checkout-form__second-block_mobile');
   const total = document.querySelector('.checkout-form__price-value');
 
-  data.forEach(product => {
+  items.forEach(product => {
     productsList.appendChild(createElement(product));
-  });
-
-  productsList.forEach(product => {
-    productCard(product);
   });
 
   const updateTotal = () => {

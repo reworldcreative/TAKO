@@ -16,8 +16,9 @@ function createList(items) {
   categoriesContainer.classList.remove('empty');
 }
 
-export async function categoryList() {
-  const items = await getData(`${base}data/categories/for-weapon.json`);
+export async function categoryList(category) {
+  const data = await getData(`${base}data/categories/for-weapon.json`);
+  const items = data.filter(item => item.category === category);
   const radios = document.querySelectorAll('input[name="categories-selector"]');
   let filteredItems = items;
 

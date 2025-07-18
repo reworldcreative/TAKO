@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <title>category</title>
+  <meta name="description"
+    content="Explore categories of solutions by Tako — a volunteer initiative producing components for drones, weapons, and other vital tools for the frontline. Fast, affordable, and precise 3D printing for our defenders.">
+
+
+  <link rel="stylesheet" href="/src/styles/category.scss">
+</head>
+
+<body>
+  {{>components/header}}
+  {{>components/toaster}}
+
+  <div class='layout'>
+    <main class='main'>
+      {{>pages/category/hero-banner img_src="/img/category/reb.jpg"
+      webp_src="/img/category/reb.webp"
+      img_src_m="/img/category/reb_m.jpg" webp_src_m="/img/category/reb_m.webp"
+      img_src_s="/img/category/reb_s.jpg" webp_src_s="/img/category/reb_s.webp" img_alt="hero reb"
+      title="РЕБ / РЕР" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"}}
+      {{>pages/home/about}}
+      {{>pages/category/categories}}
+      {{>pages/category/other-categories categoryReb='true'}}
+      {{>pages/home/how-work}}
+      {{>pages/home/bank-details}}
+    </main>
+
+    {{>components/footer}}
+  </div>
+
+  {{>components/sprite }}
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script type="module" src="/src/js/category-reb.js"></script>
+</body>
+
+</html>

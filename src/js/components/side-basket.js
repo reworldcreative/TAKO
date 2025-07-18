@@ -9,6 +9,7 @@ function createCard(data) {
   const productCardElement = document.createElement('div');
   productCardElement.className = 'product-card';
   productCardElement.dataset.id = data.id;
+  productCardElement.dataset.category = data.category;
 
   const imagePlaceholder = {
     url: 'img/medkit.jpg',
@@ -151,15 +152,12 @@ export async function sideBasket() {
 
     const products = Array.from(productElements).map(el => ({
       id: el.dataset.id,
-      name: el.querySelector('.product-card__title').textContent,
+      category: el.dataset.category,
       quantity: el.querySelector('.product-card__counter-input').value,
       image: el.querySelector('img.product-card__image').src,
-      price: el.querySelector('.product-card__price-value').textContent,
     }));
 
     localStorage.setItem('checkoutProducts', JSON.stringify(products));
     window.location.href = this.href;
   });
-
-  // productCard(sideBasket);
 }

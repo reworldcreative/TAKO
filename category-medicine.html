@@ -19,10 +19,14 @@
 
   <div class='layout'>
     <main class='main'>
-      {{>pages/category/hero-banner}}
+      {{>pages/category/hero-banner img_src="/img/category/medicine.jpg" webp_src="/img/category/medicine.webp"
+      img_src_m="/img/category/medicine_m.jpg" webp_src_m="/img/category/medicine_m.webp"
+      img_src_s="/img/category/medicine_s.jpg" webp_src_s="/img/category/medicine_s.webp" img_alt="hero medicine"
+      title="Медицина" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"}}
       {{>pages/home/about}}
       {{>pages/category/categories}}
-      {{>pages/category/other-categories}}
+      {{>pages/category/other-categories categoryMedicine='true'}}
       {{>pages/home/how-work}}
       {{>pages/home/bank-details}}
     </main>
@@ -32,7 +36,7 @@
 
   {{>components/sprite }}
   <script src="https://www.youtube.com/iframe_api"></script>
-  <script type="module" src="/src/js/category.js"></script>
+  <script type="module" src="/src/js/category-medicine.js"></script>
 </body>
 
 </html>

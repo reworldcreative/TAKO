@@ -6,6 +6,35 @@
       <div class='other-categories__container'>
         <div class="swiper other-categories__slider">
           <div class="swiper-wrapper">
+            {{#unless categoryWeapon}}
+            <div class="swiper-slide other-categories__slide">
+              <div class="other-categories__link">
+                <div class='other-categories__image'>
+                  {{>modules/picture className="img" src="/img/products/weapon1.png"
+                  webpSrc="/img/products/weapon1.webp"
+                  width="360" height="172" alt="weapon" hidden=true}}
+                  <svg class="other-categories__corner">
+                    <use xlink:href="#corner-white"></use>
+                  </svg>
+                </div>
+
+                <div class='other-categories__info'>
+                  <p class='other-categories__info-title'>Для зброї</p>
+                  <p class='other-categories__info-text'>Комплектуючі для зброї: патрони, запчастини та інше.</p>
+                </div>
+
+                <a href="category-for-weapon.html" class='button button_bordered other-categories__button'>
+                  <span>Переглянути</span>
+
+                  <svg class="other-categories__icon">
+                    <use xlink:href="#products-icon2"></use>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            {{/unless }}
+
+            {{#unless categoryMedicine}}
             <div class="swiper-slide other-categories__slide">
               <div class="other-categories__link">
                 <div class='other-categories__image'>
@@ -23,7 +52,7 @@
                     гемостатичні засоби, перев’язувальні матеріали та інше.</p>
                 </div>
 
-                <a href="#" class='button button_bordered other-categories__button'>
+                <a href="category-medicine.html" class='button button_bordered other-categories__button'>
                   <span>Переглянути</span>
 
                   <svg class="other-categories__icon">
@@ -32,7 +61,9 @@
                 </a>
               </div>
             </div>
+            {{/unless }}
 
+            {{#unless categoryWalkieTalkie}}
             <div class="swiper-slide other-categories__slide">
               <div class="other-categories__link">
                 <div class='other-categories__image'>
@@ -50,7 +81,7 @@
                     гарнітури, кабелі, PTT-кнопки, антени та засоби кріплення.</p>
                 </div>
 
-                <a href="#" class='button button_bordered other-categories__button'>
+                <a href="category-walkie-talkie.html" class='button button_bordered other-categories__button'>
                   <span>Переглянути</span>
 
                   <svg class="other-categories__icon">
@@ -59,7 +90,9 @@
                 </a>
               </div>
             </div>
+            {{/unless }}
 
+            {{#unless categoryReb}}
             <div class="swiper-slide other-categories__slide">
               <div class="other-categories__link">
                 <div class='other-categories__image'>
@@ -78,7 +111,7 @@
                     сигналів, антени, системи моніторингу й інше спеціалізоване обладнання.</p>
                 </div>
 
-                <a href="#" class='button button_bordered other-categories__button'>
+                <a href="category-reb.html" class='button button_bordered other-categories__button'>
                   <span>Переглянути</span>
 
                   <svg class="other-categories__icon">
@@ -87,7 +120,9 @@
                 </a>
               </div>
             </div>
+            {{/unless }}
 
+            {{#unless categoryDrone}}
             <div class="swiper-slide other-categories__slide">
               <div class="other-categories__link">
                 <div class='other-categories__image'>
@@ -105,7 +140,7 @@
                     камери, ПІДи, системи зв’язку, антени та запчастини.</p>
                 </div>
 
-                <a href="#" class='button button_bordered other-categories__button'>
+                <a href="category-drones.html" class='button button_bordered other-categories__button'>
                   <span>Переглянути</span>
 
                   <svg class="other-categories__icon">
@@ -114,6 +149,7 @@
                 </a>
               </div>
             </div>
+            {{/unless }}
           </div>
         </div>
       </div>

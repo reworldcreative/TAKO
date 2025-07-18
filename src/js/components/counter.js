@@ -2,6 +2,10 @@ export function counter(element) {
 
   if (!element) return;
 
+  const data = JSON.parse(localStorage.getItem('checkoutProducts'));
+  const index = data.findIndex(el => String(el.id) === String(element.dataset.id) && String(el.category) === String(element.dataset.category));
+  console.log(data)
+
   const decrement = element.querySelector('.decrement');
   const increment = element.querySelector('.increment');
   const input = element.querySelector('.input');
@@ -26,5 +30,10 @@ export function counter(element) {
 
     if (value > 1) decrement.removeAttribute('disabled');
     else decrement.setAttribute('disabled', '');
+
+    if (index !== -1) {
+      data[index].quantity = input.value.toString();
+      localStorage.setItem('checkoutProducts', JSON.stringify(data));
+    }
   });
 }

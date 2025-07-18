@@ -1,7 +1,10 @@
+import { productCard } from "./product-card";
+
 export function createElement(data) {
   const element = document.createElement('div');
   element.className = 'product-card';
   element.dataset.id = data.id;
+  element.dataset.category = data.category;
   element.innerHTML = `
     <picture class="product-card__image ">
         <source type="image/webp" srcset="${data.image.replace(/\.\w+$/, '.webp')}">
@@ -10,7 +13,7 @@ export function createElement(data) {
         <img src="${data.image}" alt="product" class="product-card__image" draggable="false" width="124" height="124" loading="lazy">
     </picture>
     <div class="product-card__top">
-      <p class="product-card__title">${data.name}</p>
+      <p class="product-card__title">${data.title}</p>
   
       <button class="product-card__trash-button" type="button" aria-label="delete product">
         <svg class="product-card__trash-icon">
@@ -36,12 +39,13 @@ export function createElement(data) {
   
       <div class="product-card__price">
         <p class="product-card__price-container">
-          <span class="product-card__price-value">${data.price}</span><span class="product-card__price-small">грн</span>
+          <span class="product-card__price-value">${data.price_per_unit}</span><span class="product-card__price-small">грн</span>
         </p>
         <p class="product-card__price-text">собівартість за од.</p>
       </div>
     </div>
   `;
 
+  productCard(element);
   return element;
 }
