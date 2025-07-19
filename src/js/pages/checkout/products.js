@@ -5,7 +5,7 @@ import { getData } from "@/js/components/get-data";
 const base = import.meta.env.BASE_URL || '/';
 
 export async function products() {
-  const serverData = await getData(`${base}data/categories/for-weapon.json`);
+  const serverData = await getData(`${base}data/categories/categories.json`);
   const data = JSON.parse(localStorage.getItem('checkoutProducts'));
 
   const items = serverData

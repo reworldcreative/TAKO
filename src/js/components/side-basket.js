@@ -87,7 +87,7 @@ function createCardList(items, basket, basketContent) {
 }
 
 export async function sideBasket() {
-  const items = await getData(`${base}data/categories/for-weapon.json`);
+  const items = await getData(`${base}data/categories/categories.json`);
   const sideBasket = document.querySelector('.side-basket');
   const sideBasketContainer = document.querySelector('.side-basket__container');
   const sideBasketContent = document.querySelector('.side-basket__content');

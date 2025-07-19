@@ -89,5 +89,91 @@
         "alt": "product"
       }
     ]
+  },
+  {
+    "id": 4,
+    "category": "medicine",
+    "title": "турнікет для автоматичної зброї",
+    "description": "<p>Турнікет для автоматичної зброї. Підходить для використання в умовах повної темряви.</p><ul><li>Універсальне</li><li>Матеріал — Алюміній</li><li>Вага — 65 гр</li></ul>",
+    "tags_in_category": ["Універсальне", "Матеріал — Алюміній", "Вага — 65 гр"],
+    "tags": ["less-recoil", "higher-accuracy", "easy-installation"],
+    "price_per_unit": 12.0,
+    "transferred_amount": 700,
+    "images": [
+      {
+        "type": "image",
+        "url": "img/products/items/product02.jpg",
+        "webp_url": "img/products/items/product02.webp",
+        "alt": "product"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "category": "medicine",
+    "title": "Індивідуальний кровоспинний пакет",
+    "description": "<p>Необхідний засіб для зупинки критичних кровотеч у польових умовах. Високий тиск і компактна форма.</p><ul><li>Турнікет + гемостатична пов'язка</li><li>Стерильно упакований</li><li>Просте використання однією рукою</li></ul>",
+    "tags_in_category": ["Тип — Тактична медицина", "Призначення — Зупинка кровотечі", "Упаковка — Вакуум"],
+    "tags": ["stop-bleeding", "tactical-first-aid", "compact-and-lightweight"],
+    "price_per_unit": 15.0,
+    "transferred_amount": 2300,
+    "images": [
+      {
+        "type": "image",
+        "url": "img/products/items/product.jpg",
+        "webp_url": "img/products/items/product.webp",
+        "alt": "product"
+      },
+      {
+        "type": "image",
+        "url": "img/products/items/product01.jpg",
+        "webp_url": "img/products/items/product01.webp",
+        "alt": "product"
+      },
+      {
+        "type": "video",
+        "video_id": "hScbwX85HYo"
+      },
+      {
+        "type": "image",
+        "url": "img/products/items/product01.jpg",
+        "webp_url": "img/products/items/product01.webp",
+        "alt": "product"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "category": "drones",
+    "title": "Камера з нічним баченням для дронів",
+    "description": "<p>Високочутлива камера для розвідки вночі. Працює в умовах повної темряви.</p><ol><li>ІЧ-підсвітка до 100 м</li><li>Роздільна здатність 1080p</li><li>Легка інтеграція з популярними моделями дронів</li></ol>",
+    "tags_in_category": ["Роздільна здатність — 1080p", "Підсвітка — ІЧ", "Сумісність — DJI, Autel"],
+    "tags": ["night-vision", "long-range-visibility", "drone-upgrade"],
+    "price_per_unit": 48.0,
+    "transferred_amount": 410,
+    "images": [
+      {
+        "type": "image",
+        "url": "img/products/items/product2.jpg",
+        "webp_url": "img/products/items/product2.webp",
+        "alt": "product"
+      },
+      {
+        "type": "image",
+        "url": "img/products/items/product02.jpg",
+        "webp_url": "img/products/items/product02.webp",
+        "alt": "product"
+      },
+      {
+        "type": "video",
+        "video_id": "hScbwX85HYo"
+      },
+      {
+        "type": "image",
+        "url": "img/products/items/product02.jpg",
+        "webp_url": "img/products/items/product02.webp",
+        "alt": "product"
+      }
+    ]
   }
 ]
