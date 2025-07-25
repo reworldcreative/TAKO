@@ -3,7 +3,7 @@ export const tagTranslations = {
     ua: 'Усі',
     en: 'All'
   },
-  'more-comfortable-in-the-dark': {
+  'more-comfortable-in-dark': {
     ua: 'Зручніше в темряві',
     en: 'More comfortable in the dark'
   },

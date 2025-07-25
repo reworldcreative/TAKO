@@ -175,5 +175,145 @@
         "alt": "product"
       }
     ]
+  },
+  {
+    "id": 7,
+    "category": "for-weapon",
+    "title": "Тактичне кріплення для ліхтаря",
+    "description": "<p>Надійне кріплення для встановлення тактичного ліхтаря на зброю. Підходить для більшості моделей.</p><ul><li>Алюмінієвий корпус</li><li>Регульований діаметр фіксації</li><li>Швидке встановлення без інструментів</li></ul>",
+    "tags_in_category": ["Матеріал — Алюміній", "Тип — Кріплення", "Вага — 38 гр"],
+    "tags": ["easy-installation", "more-comfortable-in-the-dark", "tactical-upgrade"],
+    "price_per_unit": 8.5,
+    "transferred_amount": 675,
+    "images": [
+      {
+        "type": "image",
+        "url": "img/products/items/product.jpg",
+        "webp_url": "img/products/items/product.webp",
+        "alt": "product"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "category": "for-weapon",
+    "title": "Амортизуюча накладка на приклад",
+    "description": "<p>Поглинає віддачу під час стрільби, знижуючи навантаження на плече. Ідеально для тривалого використання.</p><ul><li>Сумісна з більшістю прикладів</li><li>Протиковзке покриття</li><li>Швидке встановлення</li></ul>",
+    "tags_in_category": ["Тип — Накладка", "Матеріал — Гума", "Вага — 52 гр"],
+    "tags": ["less-recoil", "more-comfortable-in-cold", "easy-installation"],
+    "price_per_unit": 9.0,
+    "transferred_amount": 940,
+    "images": [
+      {
+        "type": "image",
+        "url": "img/products/items/product01.jpg",
+        "webp_url": "img/products/items/product01.webp",
+        "alt": "product"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "category": "for-weapon",
+    "title": "Покращений запобіжник",
+    "description": "<p>Дозволяє безшумно переводити зброю у бойовий режим. Призначений для тактичних операцій.</p><ol><li>Висока зносостійкість</li><li>Сумісність з АК-платформами</li><li>Покриття проти корозії</li></ol>",
+    "tags_in_category": ["Тип — Механізм", "Сумісність — АК", "Вага — 25 гр"],
+    "tags": ["stealth-mode", "quick-equipment", "more-durable"],
+    "price_per_unit": 7.5,
+    "transferred_amount": 1230,
+    "images": [
+      {
+        "type": "image",
+        "url": "img/products/items/product.jpg",
+        "webp_url": "img/products/items/product.webp",
+        "alt": "product"
+      },
+      {
+        "type": "image",
+        "url": "img/products/items/product01.jpg",
+        "webp_url": "img/products/items/product01.webp",
+        "alt": "product"
+      },
+      {
+        "type": "video",
+        "video_id": "hScbwX85HYo"
+      },
+      {
+        "type": "image",
+        "url": "img/products/items/product01.jpg",
+        "webp_url": "img/products/items/product01.webp",
+        "alt": "product"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "category": "for-weapon",
+    "title": "Модуль Пікатінні для аксесуарів",
+    "description": "<p>Універсальний рейковий модуль стандарту Пікатінні для встановлення додаткових аксесуарів на зброю.</p><ul><li>Сумісний з ліхтарями, лазерами, прицілами</li><li>Надміцний алюмінієвий сплав</li><li>Можливість швидкого монтажу</li></ul>",
+    "tags_in_category": ["Стандарт — Пікатінні", "Матеріал — Алюміній", "Вага — 60 гр"],
+    "tags": ["easy-installation", "tactical-upgrade", "more-durable"],
+    "price_per_unit": 11.0,
+    "transferred_amount": 790,
+    "images": [
+      {
+        "type": "image",
+        "url": "img/products/items/product.jpg",
+        "webp_url": "img/products/items/product.webp",
+        "alt": "product"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "category": "for-weapon",
+    "title": "Руків’я з термозахистом",
+    "description": "<p>Ергономічне руків’я з покриттям, стійким до високих температур. Забезпечує надійне утримання зброї.</p><ol><li>Термостійкий полімер</li><li>Знижує ковзання навіть у вологих умовах</li><li>Підходить для правші та лівші</li></ol>",
+    "tags_in_category": ["Матеріал — Полімер", "Тип — Руків’я", "Вага — 85 гр"],
+    "tags": ["more-comfortable-in-heat", "less-effort-when-charging", "tactical-upgrade"],
+    "price_per_unit": 13.0,
+    "transferred_amount": 1030,
+    "images": [
+      {
+        "type": "image",
+        "url": "img/products/items/product.jpg",
+        "webp_url": "img/products/items/product.webp",
+        "alt": "product"
+      },
+      {
+        "type": "image",
+        "url": "img/products/items/product01.jpg",
+        "webp_url": "img/products/items/product01.webp",
+        "alt": "product"
+      },
+      {
+        "type": "video",
+        "video_id": "hScbwX85HYo"
+      },
+      {
+        "type": "image",
+        "url": "img/products/items/product01.jpg",
+        "webp_url": "img/products/items/product01.webp",
+        "alt": "product"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "category": "for-weapon",
+    "title": "Компактний глушник для тренувань",
+    "description": "<p>Ідеально підходить для стрільби на полігоні та під час тренувань. Зменшує звук пострілу та полум’я.</p><ul><li>Сумісність з більшістю калібрів</li><li>Анодоване покриття</li><li>Знімна конструкція для чищення</li></ul>",
+    "tags_in_category": ["Тип — Тренувальний", "Матеріал — Сталь", "Вага — 110 гр"],
+    "tags": ["less-noise", "quick-equipment", "easy-maintenance"],
+    "price_per_unit": 22.0,
+    "transferred_amount": 480,
+    "images": [
+      {
+        "type": "image",
+        "url": "img/products/items/product2.jpg",
+        "webp_url": "img/products/items/product2.webp",
+        "alt": "product"
+      }
+    ]
   }
 ]

@@ -23,7 +23,7 @@ export function initCategorySliders(categoryItem) {
     if (thumbsSwiper) thumbsSwiper.destroy(true, true);
 
     thumbsSwiper = new Swiper(thumbnailSliderEl, {
-      loop: true,
+      loop: false,
       spaceBetween: 8,
       slidesPerView: 3,
       watchSlidesProgress: true,
@@ -81,7 +81,7 @@ export function initCategorySliders(categoryItem) {
   });
 
   const mainSwiper = new Swiper(mainSliderEl, {
-    loop: true,
+    loop: false,
     spaceBetween: 10,
     slideToClickedSlide: true,
     navigation: {
@@ -118,7 +118,7 @@ export function initCategorySliders(categoryItem) {
   });
 
   const modalSwiper = new Swiper(modalSliderEl, {
-    loop: true,
+    loop: false,
     spaceBetween: 10,
     modules: [Navigation, Pagination],
     navigation: {
