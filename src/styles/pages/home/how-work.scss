@@ -43,6 +43,10 @@
 
     .swiper-wrapper {
       display: flex;
+
+      .swiper-slide-active {
+        z-index: 1;
+      }
     }
   }
 
@@ -306,8 +310,9 @@
     align-items: center;
     justify-content: space-between;
     color: $primary-white;
+    width: 99%;
     max-width: 554px;
-    margin: auto 0 23px;
+    margin: auto auto 23px;
     padding: 22px 24px 22px 32px;
     font-size: 18px;
     font-style: normal;
